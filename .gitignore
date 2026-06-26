@@ -31,3 +31,6 @@ npm-debug.log*
 # ─── Large / Unnecessary Files ────────────────────────────────────────────────
 *.zip
 desktop.ini
+
+# ─── Animation Frames (large binary files — serve locally) ────────────────────
+src/assets/frames/
