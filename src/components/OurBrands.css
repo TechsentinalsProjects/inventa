@@ -1,0 +1,241 @@
+/* ── Our Brands Section ── */
+.ob-section {
+  position: relative;
+  background: #f5f7f5;
+  padding: 120px 5% 100px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Radial green glow top-right */
+.ob-glow {
+  position: absolute;
+  top: -120px;
+  right: -160px;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(93, 174, 123, 0.12) 0%, transparent 68%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Header ── */
+.ob-header {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 56px;
+}
+
+.ob-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--accent);
+  margin-bottom: 20px;
+}
+
+.ob-kicker-line {
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: var(--accent);
+  border-radius: 2px;
+}
+
+.ob-title {
+  font-size: clamp(1.7rem, 3.8vw, 2.6rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+  color: #111;
+  margin-bottom: 20px;
+}
+
+.ob-title-accent {
+  background: linear-gradient(135deg, #5DAE7B 0%, #3d9a5f 60%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.ob-subtitle {
+  font-size: clamp(0.95rem, 1.3vw, 1.1rem);
+  color: #666;
+  line-height: 1.7;
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+/* ────────────────────────────────────────────
+   OUR BRANDS MARQUEE (Horizontal Scrolling)
+──────────────────────────────────────────── */
+.ob-marquee-container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  margin: 0 auto 56px;
+  overflow: hidden;
+}
+
+.ob-marquee-wrapper {
+  width: 100%;
+  overflow: hidden;
+  padding: 16px 0;
+  mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+}
+
+.ob-marquee-track {
+  display: flex;
+  width: max-content;
+  gap: 20px;
+  animation: ob-marquee-scroll var(--marquee-duration, 35s) linear infinite;
+}
+
+.ob-marquee-track.ob-is-reverse {
+  animation-name: ob-marquee-scroll-reverse;
+}
+
+.ob-marquee-wrapper:hover .ob-marquee-track {
+  animation-play-state: paused;
+}
+
+/* Scroll Animations */
+@keyframes ob-marquee-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-33.333%); }
+}
+
+@keyframes ob-marquee-scroll-reverse {
+  0% { transform: translateX(-33.333%); }
+  100% { transform: translateX(0); }
+}
+
+/* Marquee Item Card (Big Image, No Name) */
+.ob-marquee-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  width: 170px;
+  height: 90px;
+  padding: 16px;
+  border-radius: 18px;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.02);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  flex-shrink: 0;
+}
+
+.ob-marquee-item:hover,
+.ob-marquee-item.ob-is-hovered {
+  transform: translateY(-4px) scale(1.04);
+  border-color: rgba(93, 174, 123, 0.25);
+  box-shadow: 0 12px 28px rgba(93, 174, 123, 0.12);
+}
+
+.ob-marquee-track:hover .ob-marquee-item:not(:hover) {
+  opacity: 0.45;
+}
+
+/* Logo container in Marquee Item */
+.ob-marquee-logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.4s ease;
+}
+
+.ob-marquee-logo {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  filter: grayscale(12%);
+  transition: filter 0.35s ease;
+}
+
+.ob-marquee-item:hover .ob-marquee-logo {
+  filter: grayscale(0%);
+}
+
+/* Dark background for white-logo brands (e.g. Labserve) */
+.ob-marquee-item.ob-dark-bg {
+  background: #1e3a2f;
+}
+
+.ob-marquee-item.ob-dark-bg:hover,
+.ob-marquee-item.ob-dark-bg.ob-is-hovered {
+  background: #2a4f3f;
+  border-color: rgba(93, 174, 123, 0.4);
+}
+
+.ob-marquee-item.ob-dark-bg .ob-marquee-logo {
+  filter: grayscale(0%) brightness(1.1);
+}
+
+/* ── CTA row ── */
+.ob-cta-row {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.ob-cta-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 32px;
+  border-radius: 100px;
+  background: #111;
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+}
+
+.ob-cta-link:hover {
+  background: linear-gradient(135deg, #5DAE7B, #4A9A68);
+  box-shadow: 0 6px 24px rgba(93, 174, 123, 0.4);
+  transform: translateY(-2px);
+}
+
+.ob-cta-link svg {
+  transition: transform 0.3s ease;
+}
+
+.ob-cta-link:hover svg {
+  transform: translateX(4px);
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .ob-section {
+    padding: 80px 5% 70px;
+  }
+
+  .ob-header {
+    margin-bottom: 36px;
+  }
+
+  .ob-marquee-item {
+    width: 130px;
+    height: 70px;
+    padding: 10px;
+    border-radius: 12px;
+  }
+}
+

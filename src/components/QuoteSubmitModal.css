@@ -1,0 +1,281 @@
+.qsm-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.qsm-modal {
+  background: #fff;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 480px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+}
+
+/* Header */
+.qsm-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 24px 24px 0;
+}
+
+.qsm-title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.qsm-subtitle {
+  margin: 4px 0 0;
+  font-size: 13px;
+  color: #6B7280;
+}
+
+.qsm-close {
+  background: none;
+  border: none;
+  color: #9CA3AF;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 6px;
+  transition: all 0.15s;
+}
+
+.qsm-close:hover {
+  background: #F3F4F6;
+  color: #374151;
+}
+
+/* Items Summary */
+.qsm-items-summary {
+  margin: 20px 24px 0;
+  background: #F9FAFB;
+  border: 1px solid #E5E7EB;
+  border-radius: 10px;
+  padding: 4px 0;
+  max-height: 160px;
+  overflow-y: auto;
+}
+
+.qsm-item-row {
+  display: flex;
+  align-items: center;
+  padding: 10px 16px;
+  gap: 8px;
+}
+
+.qsm-item-row + .qsm-item-row {
+  border-top: 1px solid #F3F4F6;
+}
+
+.qsm-item-name {
+  flex: 1;
+  font-size: 13px;
+  font-weight: 600;
+  color: #1F2937;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.qsm-item-cat {
+  font-size: 11px;
+  color: #9CA3AF;
+  flex-shrink: 0;
+}
+
+.qsm-item-qty {
+  font-size: 13px;
+  font-weight: 700;
+  color: #3B82F6;
+  min-width: 28px;
+  text-align: right;
+}
+
+/* Form */
+.qsm-form {
+  padding: 20px 24px 24px;
+}
+
+.qsm-form-label {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #6B7280;
+  margin: 0 0 14px;
+}
+
+.qsm-field {
+  display: flex;
+  align-items: center;
+  background: #F9FAFB;
+  border: 1px solid #E5E7EB;
+  border-radius: 10px;
+  padding: 0 14px;
+  margin-bottom: 12px;
+  transition: border-color 0.2s;
+}
+
+.qsm-field:focus-within {
+  border-color: #3B82F6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.qsm-field-icon {
+  color: #9CA3AF;
+  flex-shrink: 0;
+  margin-right: 10px;
+}
+
+.qsm-field input {
+  flex: 1;
+  background: none;
+  border: none;
+  padding: 14px 0;
+  font-size: 14px;
+  color: #1F2937;
+  outline: none;
+}
+
+.qsm-field input::placeholder {
+  color: #9CA3AF;
+}
+
+/* Error */
+.qsm-error {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  background: #FEF2F2;
+  border: 1px solid #FECACA;
+  border-radius: 8px;
+  color: #DC2626;
+  font-size: 13px;
+  margin-bottom: 14px;
+}
+
+/* Submit Button */
+.qsm-submit-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px;
+  background: #3B82F6;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.qsm-submit-btn:hover:not(:disabled) {
+  background: #2563EB;
+}
+
+.qsm-submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.qsm-spinner {
+  animation: qsmSpin 1s linear infinite;
+}
+
+@keyframes qsmSpin {
+  to { transform: rotate(360deg); }
+}
+
+.qsm-privacy {
+  margin: 12px 0 0;
+  font-size: 11px;
+  color: #9CA3AF;
+  text-align: center;
+}
+
+/* Success State */
+.qsm-success {
+  padding: 48px 32px;
+  text-align: center;
+}
+
+.qsm-success-icon {
+  color: #10B981;
+  margin-bottom: 16px;
+}
+
+.qsm-success h3 {
+  margin: 0 0 8px;
+  font-size: 22px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.qsm-success p {
+  margin: 0;
+  font-size: 14px;
+  color: #6B7280;
+  line-height: 1.6;
+}
+
+/* Scrollbar */
+.qsm-items-summary::-webkit-scrollbar {
+  width: 4px;
+}
+.qsm-items-summary::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 2px;
+}
+
+@media (max-width: 520px) {
+  .qsm-modal {
+    max-width: 100%;
+    border-radius: 12px;
+    margin: 12px;
+    max-height: 90vh;
+  }
+  .qsm-header {
+    padding: 16px;
+  }
+  .qsm-header h3 {
+    font-size: 16px;
+  }
+  .qsm-body {
+    padding: 16px;
+  }
+  .qsm-row {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .qsm-field input,
+  .qsm-field textarea {
+    font-size: 14px;
+    padding: 10px 12px;
+  }
+  .qsm-items-summary {
+    max-height: 120px;
+  }
+  .qsm-footer {
+    padding: 14px 16px;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .qsm-footer button {
+    width: 100%;
+  }
+}

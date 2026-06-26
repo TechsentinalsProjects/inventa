@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Block API and private routes
+Disallow: /api/
+
+# Sitemap
+Sitemap: https://www.inventasystems.in/sitemap.xml

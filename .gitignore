@@ -1,0 +1,33 @@
+# ─── Dependencies ─────────────────────────────────────────────────────────────
+node_modules/
+server/node_modules/
+
+# ─── Environment / Secrets — NEVER COMMIT ─────────────────────────────────────
+.env
+.env.local
+.env.*.local
+server/.env
+server/.env.local
+
+# ─── Build Output ─────────────────────────────────────────────────────────────
+dist/
+build/
+
+# ─── Backend Runtime Data ─────────────────────────────────────────────────────
+server/data/
+
+# ─── OS / Editor Junk ─────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+*.local
+
+# ─── Logs ─────────────────────────────────────────────────────────────────────
+*.log
+npm-debug.log*
+
+# ─── Netlify ──────────────────────────────────────────────────────────────────
+.netlify
+
+# ─── Large / Unnecessary Files ────────────────────────────────────────────────
+*.zip
+desktop.ini
