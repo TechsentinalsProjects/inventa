@@ -19,13 +19,13 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 48px 24px 80px;
+      padding: clamp(32px, 6vw, 64px) clamp(20px, 5vw, 40px) clamp(48px, 8vw, 80px);
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       position: relative;
       overflow: hidden;
     }
 
-    /* Glows — identical to 404 page */
+    /* Glows */
     .glow {
       position: absolute;
       border-radius: 50%;
@@ -33,75 +33,92 @@
       z-index: 0;
     }
     .glow--top {
-      width: 560px; height: 560px;
+      width: clamp(280px, 50vw, 560px);
+      height: clamp(280px, 50vw, 560px);
       top: -220px; right: -120px;
       background: radial-gradient(circle, rgba(93,174,123,0.09) 0%, transparent 65%);
     }
     .glow--bottom {
-      width: 400px; height: 400px;
+      width: clamp(200px, 35vw, 400px);
+      height: clamp(200px, 35vw, 400px);
       bottom: -60px; left: -100px;
       background: radial-gradient(circle, rgba(93,174,123,0.06) 0%, transparent 65%);
     }
 
-    /* Inner — flex column so every child stacks vertically */
     .inner {
       position: relative;
       z-index: 1;
       text-align: center;
-      max-width: 500px;
+      max-width: 520px;
       width: 100%;
       display: flex;
       flex-direction: column;
       align-items: center;
     }
 
-    /* Logo — compact brand mark at the top since no nav exists here */
+    /* ── Logo ── */
     .logo {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
-      margin-bottom: 48px;
+      gap: 12px;
+      margin-bottom: clamp(36px, 6vw, 56px);
       text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 100px;
+      background: rgba(255,255,255,0.7);
+      border: 1px solid rgba(93,174,123,0.15);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+      backdrop-filter: blur(6px);
+      transition: box-shadow 0.2s ease;
+    }
+    .logo:hover {
+      box-shadow: 0 4px 20px rgba(93,174,123,0.18);
     }
     .logo img {
-      width: 32px; height: 32px;
+      width: clamp(36px, 6vw, 48px);
+      height: clamp(36px, 6vw, 48px);
       object-fit: contain;
+      flex-shrink: 0;
     }
     .logo-name {
       font-family: 'Space Grotesk', sans-serif;
-      font-size: 1rem;
+      font-size: clamp(1.05rem, 2vw, 1.3rem);
       font-weight: 700;
       color: #111;
-      letter-spacing: -0.02em;
+      letter-spacing: -0.03em;
+      white-space: nowrap;
     }
 
-    /* Gear icon — standalone block, same visual weight as the 404 number */
+    /* ── Gear icon ── */
     .gear-icon {
       display: block;
       color: #5DAE7B;
-      margin-bottom: 22px;
+      width: clamp(72px, 14vw, 104px);
+      height: clamp(72px, 14vw, 104px);
+      margin-bottom: clamp(16px, 3vw, 24px);
       animation: spin-slow 10s linear infinite;
       flex-shrink: 0;
+      filter: drop-shadow(0 4px 16px rgba(93,174,123,0.25));
     }
     @keyframes spin-slow {
-      0%   { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
+      to { transform: rotate(360deg); }
     }
 
-    /* Badge */
+    /* ── Badge ── */
     .badge {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
+      gap: 7px;
       background: rgba(93,174,123,0.12);
       color: #3d8a5a;
-      font-size: 0.75rem;
+      font-size: clamp(0.68rem, 1.5vw, 0.75rem);
       font-weight: 600;
-      padding: 5px 14px;
+      padding: 6px 16px;
       border-radius: 100px;
-      letter-spacing: 0.04em;
+      letter-spacing: 0.05em;
       text-transform: uppercase;
-      margin-bottom: 20px;
+      margin-bottom: clamp(16px, 3vw, 22px);
+      border: 1px solid rgba(93,174,123,0.2);
     }
     .badge-dot {
       width: 6px; height: 6px;
@@ -112,16 +129,16 @@
     }
     @keyframes pulse {
       0%, 100% { opacity: 1; transform: scale(1); }
-      50%       { opacity: 0.4; transform: scale(0.7); }
+      50%       { opacity: 0.35; transform: scale(0.65); }
     }
 
-    /* Dots — identical to 404 .nf-dots */
+    /* ── Dots ── */
     .dots {
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 7px;
-      margin: 0 0 26px;
+      margin: 0 0 clamp(20px, 4vw, 28px);
     }
     .dot {
       width: 7px; height: 7px;
@@ -132,34 +149,35 @@
     .dot:nth-child(2) { opacity: 0.55; }
     .dot:nth-child(3) { opacity: 1; }
 
-    /* Heading — identical to 404 .nf-title */
+    /* ── Heading ── */
     h1 {
       font-family: 'Space Grotesk', sans-serif;
-      font-size: clamp(1.4rem, 2.8vw, 1.9rem);
+      font-size: clamp(1.5rem, 3.5vw, 2.1rem);
       font-weight: 700;
       color: #111;
       letter-spacing: -0.03em;
-      margin: 0 0 12px;
-      line-height: 1.2;
+      margin: 0 0 14px;
+      line-height: 1.15;
     }
 
-    /* Description — identical to 404 .nf-desc */
+    /* ── Description ── */
     .desc {
-      font-size: 0.9rem;
+      font-size: clamp(0.875rem, 1.8vw, 0.95rem);
       color: #666;
       line-height: 1.75;
       max-width: 380px;
-      margin: 0 auto 36px;
+      margin: 0 auto clamp(28px, 5vw, 38px);
     }
 
-    /* Buttons — identical to 404 .nf-actions / .nf-btn */
+    /* ── Buttons ── */
     .actions {
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 12px;
       flex-wrap: wrap;
-      margin-bottom: 28px;
+      margin-bottom: clamp(20px, 4vw, 30px);
+      width: 100%;
     }
 
     .btn {
@@ -169,7 +187,7 @@
       gap: 8px;
       padding: 14px 28px;
       border-radius: 100px;
-      font-size: 0.9rem;
+      font-size: clamp(0.875rem, 1.8vw, 0.9rem);
       font-weight: 600;
       text-decoration: none;
       white-space: nowrap;
@@ -201,11 +219,11 @@
       background: rgba(93,174,123,0.06);
     }
 
-    /* Footer note — matches 404 .nf-back-link tone */
+    /* ── Note ── */
     .note {
-      font-size: 0.8rem;
+      font-size: clamp(0.75rem, 1.5vw, 0.8rem);
       color: #999;
-      line-height: 1.7;
+      line-height: 1.75;
     }
     .note a {
       color: #5DAE7B;
@@ -213,8 +231,8 @@
     }
     .note a:hover { text-decoration: underline; }
 
-    /* Mobile — identical to 404 breakpoints */
-    @media (max-width: 520px) {
+    /* ── Tablet / small desktop ── */
+    @media (max-width: 600px) {
       .actions {
         flex-direction: column;
         align-items: stretch;
@@ -222,14 +240,27 @@
       }
       .btn {
         padding: 13px 24px;
-        font-size: 0.875rem;
+        justify-content: center;
       }
-      .logo { margin-bottom: 36px; }
     }
 
-    @media (max-width: 360px) {
-      h1 { font-size: 1.2rem; }
-      .desc { font-size: 0.825rem; }
+    /* ── Mobile ── */
+    @media (max-width: 400px) {
+      .logo {
+        padding: 8px 16px;
+        gap: 10px;
+      }
+      h1 { font-size: 1.35rem; }
+      .desc { font-size: 0.85rem; }
+    }
+
+    /* ── Landscape / short screens ── */
+    @media (max-height: 640px) {
+      body { justify-content: flex-start; padding-top: 32px; }
+      .gear-icon { width: 60px; height: 60px; margin-bottom: 12px; }
+      .logo { margin-bottom: 28px; }
+      h1 { margin-bottom: 8px; }
+      .desc { margin-bottom: 20px; }
     }
   </style>
 </head>
@@ -245,8 +276,8 @@
       <span class="logo-name">Inventa Systems</span>
     </a>
 
-    <svg class="gear-icon" width="80" height="80" viewBox="0 0 24 24" fill="none"
-         stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"
+    <svg class="gear-icon" viewBox="0 0 24 24" fill="none"
+         stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"
          aria-hidden="true">
       <circle cx="12" cy="12" r="3"/>
       <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06
