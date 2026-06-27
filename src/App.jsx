@@ -14,6 +14,7 @@ import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
 import CareersPage from './pages/CareersPage';
 import KeyClients from './pages/KeyClients';
+import NotFoundPage from './pages/NotFoundPage';
 import ChatBot from './components/ChatBot';
 import { CartProvider } from './context/CartContext';
 import GlobalQuoteCart from './components/GlobalQuoteCart';
@@ -73,6 +74,7 @@ function App() {
           <Route path="/key-clients" element={<KeyClients />} />
           <Route path="/careers" element={<CareersPage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
         <Footer />
         <ChatBot />

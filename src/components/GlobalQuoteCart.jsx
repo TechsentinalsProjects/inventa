@@ -8,6 +8,13 @@ const GlobalQuoteCart = () => {
   const { cart, updateQuantity, removeFromCart, clearCart, isCartOpen, setIsCartOpen } = useCart();
   const [showSubmitModal, setShowSubmitModal] = useState(false);
   const [isCollapsed, setIsCollapsed] = useState(false);
+  const [backToTopVisible, setBackToTopVisible] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setBackToTopVisible(window.scrollY > 400);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   // Form states
   const [name, setName] = useState('');
@@ -114,51 +121,18 @@ const GlobalQuoteCart = () => {
 
   return (
     <>
-      {/* Floating Action Button (placed bottom-left) */}
+      {/* Floating Action Button */}
       {!isCartOpen && !showSubmitModal && totalItems > 0 && (
-        <motion.button 
-          layout
-          className="gqc-fab" 
+        <button
+          className={`gqc-fab${isCollapsed ? '' : ' gqc-fab--expanded'}${backToTopVisible ? ' gqc-fab--raised' : ''}`}
           onClick={() => setIsCartOpen(true)}
           onMouseEnter={() => setIsCollapsed(false)}
           onMouseLeave={() => setIsCollapsed(true)}
-          style={{ gap: 0 }}
         >
-          <motion.div 
-            key={`icon-${totalUnits}`}
-            initial={{ scale: 0.8, y: 5 }}
-            animate={{ scale: 1, y: 0 }}
-            transition={{ type: 'spring', stiffness: 500, damping: 10 }}
-            layout 
-            style={{ display: 'flex', alignItems: 'center' }}
-          >
-            <ShoppingCart size={20} />
-          </motion.div>
-          <AnimatePresence initial={false}>
-            {!isCollapsed && (
-              <motion.span
-                layout
-                initial={{ opacity: 0, width: 0, marginLeft: 0 }}
-                animate={{ opacity: 1, width: 'auto', marginLeft: 8 }}
-                exit={{ opacity: 0, width: 0, marginLeft: 0 }}
-                style={{ overflow: 'hidden', whiteSpace: 'nowrap' }}
-              >
-                View Quote
-              </motion.span>
-            )}
-          </AnimatePresence>
-          <motion.span 
-            layout 
-            key={`badge-${totalUnits}`}
-            initial={{ scale: 0, y: -25, opacity: 0 }}
-            animate={{ scale: 1, y: 0, opacity: 1 }}
-            transition={{ type: 'spring', stiffness: 400, damping: 12 }}
-            className="gqc-fab-badge" 
-            style={{ marginLeft: 8 }}
-          >
-            {totalUnits}
-          </motion.span>
-        </motion.button>
+          <ShoppingCart size={20} />
+          <span className="gqc-fab-text">View Quote</span>
+          <span className="gqc-fab-badge">{totalUnits}</span>
+        </button>
       )}
 
       {/* Side Cart Panel */}

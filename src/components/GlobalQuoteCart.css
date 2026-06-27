@@ -3,37 +3,70 @@
 /* FAB (Floating Action Button) */
 .gqc-fab {
   position: fixed;
-  bottom: 110px;
+  bottom: 94px;  /* sits at same spot as back-to-top until it appears */
   right: 24px;
   background: #5DAE7B;
   color: white;
   border: none;
-  padding: 12px 20px;
+  padding: 11px 14px;
   border-radius: 30px;
   display: flex;
   align-items: center;
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
-  box-shadow: 0 4px 20px rgba(93, 174, 123, 0.4);
+  box-shadow: 0 4px 20px rgba(93, 174, 123, 0.45);
   z-index: 9998;
-  transition: transform 0.2s, background 0.2s;
+  transition: bottom 0.32s cubic-bezier(0.16, 1, 0.3, 1), transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+  overflow: hidden;
+}
+
+/* Raised state: back-to-top button is visible, lift FAB above it */
+.gqc-fab--raised {
+  bottom: 164px;  /* 94px bottom + 58px height + 12px gap */
 }
 
 .gqc-fab:hover {
   background: #4A9A68;
   transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(93, 174, 123, 0.5);
 }
 
+/* Expanding text — CSS-only, no Framer Motion */
+.gqc-fab-text {
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 0;
+  opacity: 0;
+  margin-left: 0;
+  transition:
+    max-width 0.32s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity   0.22s ease,
+    margin-left 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gqc-fab--expanded .gqc-fab-text {
+  max-width: 90px;
+  opacity: 1;
+  margin-left: 7px;
+}
+
+/* Badge — always inside the pill, no external animations */
 .gqc-fab-badge {
-  background: white;
-  color: #4A9A68;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  color: #3d9a62;
   font-size: 11px;
-  font-weight: 700;
+  font-weight: 800;
+  line-height: 1;
   padding: 2px 6px;
-  border-radius: 10px;
+  border-radius: 20px;
   min-width: 20px;
-  text-align: center;
+  height: 20px;
+  margin-left: 8px;
+  flex-shrink: 0;
 }
 
 /* Side Panel Overlay */
@@ -493,11 +526,14 @@
 /* ── Mobile Responsive ── */
 @media (max-width: 768px) {
   .gqc-fab {
-    bottom: 90px;
+    bottom: 80px;  /* same as mobile back-to-top default */
     right: 16px;
-    padding: 10px 16px;
+    padding: 10px 13px;
     font-size: 13px;
     border-radius: 24px;
+  }
+  .gqc-fab--raised {
+    bottom: 148px;  /* 80px + 52px + 16px gap */
   }
 
   .gqc-panel {
@@ -592,8 +628,11 @@
   .gqc-fab {
     bottom: 80px;
     right: 12px;
-    padding: 8px 14px;
+    padding: 8px 12px;
     font-size: 12px;
+  }
+  .gqc-fab--raised {
+    bottom: 140px;
   }
 
   .gqc-item-img {

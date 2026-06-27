@@ -1,0 +1,196 @@
+/* ── 404 Not Found Page ── */
+
+.nf-page {
+  min-height: calc(100vh - var(--nav-height));
+  background: var(--bg-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: calc(var(--nav-height) + 48px) 24px 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Soft decorative glows — CSS only */
+.nf-glow {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+.nf-glow--top {
+  width: 560px;
+  height: 560px;
+  top: calc(var(--nav-height) - 220px);
+  right: -120px;
+  background: radial-gradient(circle, rgba(93, 174, 123, 0.09) 0%, transparent 65%);
+}
+.nf-glow--bottom {
+  width: 400px;
+  height: 400px;
+  bottom: -60px;
+  left: -100px;
+  background: radial-gradient(circle, rgba(93, 174, 123, 0.06) 0%, transparent 65%);
+}
+
+.nf-inner {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 500px;
+  width: 100%;
+}
+
+/* Giant "404" */
+.nf-code-wrap {
+  margin-bottom: 4px;
+  line-height: 1;
+}
+.nf-code {
+  font-family: var(--font-heading);
+  font-size: clamp(100px, 20vw, 160px);
+  font-weight: 800;
+  letter-spacing: -0.06em;
+  background: linear-gradient(135deg, #5DAE7B 0%, #3d8a5a 60%, #2a6e45 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: block;
+  user-select: none;
+  line-height: 0.9;
+}
+
+/* Accent dot row */
+.nf-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  margin: 20px 0 26px;
+}
+.nf-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #5DAE7B;
+  opacity: 0.25;
+}
+.nf-dot:nth-child(2) { opacity: 0.55; }
+.nf-dot:nth-child(3) { opacity: 1; }
+
+.nf-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.4rem, 2.8vw, 1.9rem);
+  font-weight: 700;
+  color: var(--text-main);
+  margin: 0 0 12px;
+  letter-spacing: -0.03em;
+}
+
+.nf-desc {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  margin: 0 auto 36px;
+  max-width: 380px;
+}
+
+/* Action buttons — match hero .cta-primary / .cta-secondary pill style */
+.nf-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 28px;
+}
+
+.nf-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 28px;
+  border-radius: 100px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  font-family: var(--font-body);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  border: none;
+  cursor: pointer;
+}
+
+.nf-btn--primary {
+  background: linear-gradient(135deg, #5DAE7B, #4A9A68);
+  color: #ffffff;
+  box-shadow: 0 4px 16px rgba(93, 174, 123, 0.3);
+}
+.nf-btn--primary:hover {
+  background: linear-gradient(135deg, #4A9A68, #3D8A5A);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(93, 174, 123, 0.45);
+}
+
+.nf-btn--secondary {
+  background: transparent;
+  color: var(--text-main);
+  border: 1.5px solid rgba(93, 174, 123, 0.3);
+}
+.nf-btn--secondary:hover {
+  border-color: #5DAE7B;
+  color: #5DAE7B;
+  background: rgba(93, 174, 123, 0.06);
+}
+
+.nf-btn--ghost {
+  background: transparent;
+  color: var(--text-main);
+  border: 1.5px solid rgba(93, 174, 123, 0.3);
+}
+.nf-btn--ghost:hover {
+  border-color: #5DAE7B;
+  color: #5DAE7B;
+  background: rgba(93, 174, 123, 0.06);
+}
+
+/* Back link */
+.nf-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  transition: color 0.2s;
+  font-family: var(--font-body);
+}
+.nf-back-link:hover {
+  color: #5DAE7B;
+}
+
+/* ── Mobile ── */
+@media (max-width: 520px) {
+  .nf-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+  .nf-btn {
+    padding: 13px 24px;
+    font-size: 0.875rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .nf-code {
+    font-size: clamp(80px, 22vw, 120px);
+  }
+  .nf-title {
+    font-size: 1.2rem;
+  }
+  .nf-desc {
+    font-size: 0.825rem;
+  }
+}

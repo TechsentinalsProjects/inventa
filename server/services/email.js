@@ -207,7 +207,8 @@ function productCard(item, idx) {
             <table width="100%" cellpadding="0" cellspacing="0">
               <tr>
                 <td style="font-size:12px;color:${TEXT_3};padding-bottom:${features.length?'10px':'0'};">
-                  ${esc(item.categoryTitle||'General Product')}
+                  <span style="color:${GREEN};font-weight:700;">${esc(item.categoryTitle||'General Product')}</span>
+                  ${item.familyName ? `<span style="color:${TEXT_3};">&nbsp;›&nbsp;${esc(item.familyName)}</span>` : ''}
                   ${item.tier ? `&nbsp;&nbsp;${tierBadge(item.tier)}` : ''}
                   ${item.tagline ? `<br><em style="font-size:11px;color:${TEXT_3};font-style:italic;">${esc(item.tagline)}</em>` : ''}
                 </td>

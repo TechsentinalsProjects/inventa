@@ -104,8 +104,6 @@ const Footer = () => {
             <h4 className="data-col-title">Contact Directory</h4>
             <div className="data-col-content">
               <a href="mailto:dharapanchal@inventasystems.in" className="data-link-hover">dharapanchal@inventasystems.in</a>
-              <a href="mailto:service@inventasystems.in" className="data-link-hover">service@inventasystems.in</a>
-              <a href="mailto:inventasys@gmail.com" className="data-link-hover">inventasys@gmail.com</a>
               <a href="tel:+919313840714" className="data-link-hover">+91 93138 40714</a>
               <a href="tel:+917698186968" className="data-link-hover">+91 76981 86968</a>
               <a href="tel:+918734013927" className="data-link-hover">+91 87340 13927</a>

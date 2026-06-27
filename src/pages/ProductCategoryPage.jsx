@@ -346,7 +346,7 @@ const FamilyModal = ({ family, category, quantities, addedItem, onClose, onAddTo
 
 /* ── Main Page ── */
 const ProductCategoryPage = () => {
-  const { catId } = useParams();
+  const { categoryId: catId } = useParams();
   const navigate = useNavigate();
   const { addToCart, isCartOpen } = useCart();
   
