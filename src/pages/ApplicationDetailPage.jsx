@@ -270,9 +270,10 @@ const ApplicationDetailPage = () => {
 
                     <div className="adp-qbb-products">
                       {selectedWorkflow.relatedProducts.map((product, idx) => {
-                        const qty = quantities[product] || 1;
-                        const isAdded = addedItem === product;
-                        const inCart = cart.some(i => i.name === product);
+                        const name = product.name ?? product;
+                        const qty = quantities[name] || 1;
+                        const isAdded = addedItem === name;
+                        const inCart = cart.some(i => i.name === name);
                         return (
                           <div key={idx} className={`adp-qbb-product-row ${inCart ? 'in-cart' : ''}`}>
 
@@ -282,7 +283,7 @@ const ApplicationDetailPage = () => {
                                 <Box size={16} />
                               </div>
                               <div className="adp-qbb-product-text">
-                                <span className="adp-qbb-product-name">{product}</span>
+                                <span className="adp-qbb-product-name">{name}</span>
                                 {inCart ? <span className="adp-qbb-in-cart-tag">In Quote</span> : <span className="adp-qbb-unit-tag">Unit</span>}
                               </div>
                             </div>
@@ -290,14 +291,14 @@ const ApplicationDetailPage = () => {
                             {/* Qty + Add to Quote */}
                             <div className="adp-qbb-product-actions">
                               <div className="adp-qbb-qty-stepper">
-                                <button onClick={() => handleQuantityChange(product, -1)}><Minus size={12} /></button>
+                                <button onClick={() => handleQuantityChange(name, -1)}><Minus size={12} /></button>
                                 <span>{qty}</span>
-                                <button onClick={() => handleQuantityChange(product, 1)}><Plus size={12} /></button>
+                                <button onClick={() => handleQuantityChange(name, 1)}><Plus size={12} /></button>
                               </div>
                               <button
                                 className={`adp-qbb-add-btn ${isAdded ? 'added' : ''}`}
                                 style={{ background: isAdded ? '#10B981' : selectedWorkflow.appColor }}
-                                onClick={() => handleAddToQuote(product, selectedWorkflow.appCategory, `Requested from Application: ${selectedWorkflow.title}`)}
+                                onClick={() => handleAddToQuote(name, selectedWorkflow.appCategory, `Requested from Application: ${selectedWorkflow.title}`)}
                               >
                                 {isAdded ? <><CheckCircle2 size={14} /> Added!</> : <>Add to Quote</>}
                               </button>
