@@ -414,8 +414,8 @@ ssh root@147.79.68.232
 
 cd /var/www/inventa
 
-# Pull latest code from GitHub
-git pull origin main
+# Sync latest code from GitHub (safe — never overwrites .env or database)
+git fetch origin && git reset --hard origin/main
 
 # Rebuild and restart everything
 sudo bash deploy/update.sh
@@ -433,7 +433,7 @@ Then runs a health check against `http://127.0.0.1:3001/api/health`.
 ### If only the backend changed (no frontend rebuild needed)
 ```bash
 cd /var/www/inventa
-git pull origin main
+git fetch origin && git reset --hard origin/main
 cd server && npm install --omit=dev && cd ..
 pm2 restart inventa-api --update-env
 ```
@@ -443,6 +443,51 @@ pm2 restart inventa-api --update-env
 nano /var/www/inventa/server/.env
 # Make changes, save
 pm2 restart inventa-api --update-env
+```
+
+### Full update with maintenance mode (recommended for large changes)
+
+```bash
+# 1. Enable maintenance page (visitors see it instantly)
+sudo bash /var/www/inventa/deploy/maintenance-on.sh
+
+# 2. Do the update
+cd /var/www/inventa
+git fetch origin && git reset --hard origin/main
+sudo bash deploy/update.sh
+
+# 3. Disable maintenance page (site goes live again)
+sudo bash /var/www/inventa/deploy/maintenance-off.sh
+```
+
+---
+
+## 12a. Maintenance Mode
+
+File served: `/var/www/inventa/public/maintenance.html`
+Nginx reads a flag file at `/var/www/inventa/.maintenance` to decide whether to show it.
+
+### Enable maintenance mode
+```bash
+sudo bash /var/www/inventa/deploy/maintenance-on.sh
+```
+Visitors immediately see the branded maintenance page. The `/api/health` endpoint stays live.
+
+### Disable maintenance mode
+```bash
+sudo bash /var/www/inventa/deploy/maintenance-off.sh
+```
+Site goes back to normal instantly — no Nginx restart needed.
+
+### Manual toggle (if scripts not available)
+```bash
+# Enable
+touch /var/www/inventa/.maintenance
+nginx -t && systemctl reload nginx
+
+# Disable
+rm -f /var/www/inventa/.maintenance
+nginx -t && systemctl reload nginx
 ```
 
 ---
@@ -612,10 +657,10 @@ git reset --hard origin/main
 ```
 
 ### Changes pushed to GitHub but not live on server
-Git pull doesn't rebuild — you must also run the update script:
+A plain `git pull` may fail if the server has local diffs. Always use:
 ```bash
 cd /var/www/inventa
-git pull origin main
+git fetch origin && git reset --hard origin/main
 sudo bash deploy/update.sh
 ```
 
@@ -657,7 +702,7 @@ du -sh /var/backups/inventa/   # DB backups
 ```
 DEPLOY FIRST TIME  →  sudo bash deploy/setup.sh
 ENABLE SSL         →  sudo bash /var/www/inventa/deploy/enable-ssl.sh
-UPDATE SITE        →  git pull origin main && sudo bash deploy/update.sh
+UPDATE SITE        →  git fetch origin && git reset --hard origin/main && sudo bash deploy/update.sh
 BACKUP DB          →  sudo bash /var/www/inventa/deploy/backup.sh
 
 LIVE LOGS          →  pm2 logs inventa-api
