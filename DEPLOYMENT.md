@@ -479,6 +479,27 @@ sudo bash /var/www/inventa/deploy/maintenance-off.sh
 ```
 Site goes back to normal instantly — no Nginx restart needed.
 
+### Nginx config block required (one-time setup — already done if setup.sh was used)
+
+Add this inside your `server {}` block in `/etc/nginx/sites-available/inventa`, **before** the `location / {` block:
+
+```nginx
+# Maintenance mode
+if (-f /var/www/inventa/.maintenance) {
+    return 503;
+}
+error_page 503 /maintenance.html;
+location = /maintenance.html {
+    root /var/www/inventa/public;
+}
+```
+
+Run once to add it:
+```bash
+sed -i '/location \/ {/i\    if (-f /var/www/inventa/.maintenance) { return 503; }\n    error_page 503 /maintenance.html;\n    location = /maintenance.html { root /var/www/inventa/public; }\n' /etc/nginx/sites-available/inventa
+nginx -t && systemctl reload nginx
+```
+
 ### Manual toggle (if scripts not available)
 ```bash
 # Enable

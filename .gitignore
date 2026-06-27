@@ -32,5 +32,4 @@ npm-debug.log*
 *.zip
 desktop.ini
 
-# ─── Animation Frames (large binary files — serve locally) ────────────────────
-src/assets/frames/
+# Animation frames are tracked in git (needed in production)
