@@ -372,7 +372,7 @@
   background: #fff;
   border-radius: 24px;
   width: 100%;
-  max-width: 960px;
+  max-width: 1060px;
   max-height: 90vh;
   overflow-y: auto;
   box-shadow: 0 40px 80px rgba(0,0,0,0.2);
@@ -1641,6 +1641,106 @@
 }
 
 .adp-enq-done-btn:hover { filter: brightness(1.1); transform: translateY(-2px); }
+
+/* ── Documents & Resources ── */
+.adp-app-docs-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.adp-app-doc-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.adp-app-doc-group-title {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: #6b7280;
+  margin: 0;
+  padding-bottom: 4px;
+  border-bottom: 1px dashed rgba(0,0,0,0.08);
+}
+
+.adp-app-doc-links-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.adp-app-doc-link-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  background: rgba(0,0,0,0.015);
+  border: 1px solid rgba(0,0,0,0.05);
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  min-width: 0;
+}
+
+.adp-app-doc-link-card:hover {
+  background: #fff;
+  border-color: rgba(0,0,0,0.12);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.04);
+  transform: translateY(-1.5px);
+}
+
+.adp-app-doc-icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.adp-app-doc-link-card:hover .adp-app-doc-icon-wrap {
+  transform: scale(1.05);
+}
+
+.adp-app-doc-info {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  flex: 1;
+}
+
+.adp-app-doc-text {
+  font-size: 0.82rem;
+  font-weight: 550;
+  color: #1f2937;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.adp-app-doc-type {
+  font-size: 0.68rem;
+  color: #9ca3af;
+  margin-top: 2px;
+}
+
+.adp-app-doc-external-icon {
+  color: #9ca3af;
+  flex-shrink: 0;
+  opacity: 0.6;
+  transition: all 0.2s ease;
+}
+
+.adp-app-doc-link-card:hover .adp-app-doc-external-icon {
+  opacity: 1;
+  color: inherit;
+  transform: translate(1px, -1px);
+}
 
 /* ── Responsive ── */
 @media (max-width: 1024px) {

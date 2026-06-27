@@ -4,7 +4,7 @@ import SEO from '../components/SEO';
 import {
   ArrowRight, ArrowLeft, X,
   CheckCircle2, Box, ShoppingCart, Trash2, Plus, Minus, Send, Phone, User, Mail, MessageSquare,
-  Loader2, AlertCircle, MessageCircle
+  Loader2, AlertCircle, FileText, ExternalLink
 } from 'lucide-react';
 import { applicationsData } from '../data/applicationsData';
 import { useCart } from '../context/CartContext';
@@ -27,7 +27,6 @@ const ApplicationDetailPage = () => {
   const [askEmail, setAskEmail] = useState('');
   const [askMessage, setAskMessage] = useState('');
   const [askStatus, setAskStatus] = useState('idle');
-  const [askError, setAskError] = useState('');
 
   useEffect(() => {
     if (!app) navigate('/applications', { replace: true });
@@ -40,7 +39,7 @@ const ApplicationDetailPage = () => {
   }, [selectedWorkflow, isCartOpen]);
 
   useEffect(() => {
-    if (selectedWorkflow) { setAskName(''); setAskEmail(''); setAskMessage(''); setAskStatus('idle'); setAskError(''); }
+    if (selectedWorkflow) { setAskName(''); setAskEmail(''); setAskMessage(''); setAskStatus('idle'); }
   }, [selectedWorkflow]);
 
   const askPayload = () => ({
@@ -52,8 +51,8 @@ const ApplicationDetailPage = () => {
 
   const handleAskSubmit = async (e) => {
     e.preventDefault();
+    if (!askName.trim() || !askEmail.trim()) return;
     setAskStatus('sending');
-    setAskError('');
     try {
       const res = await fetch('/api/enquiry', {
         method: 'POST',
@@ -63,37 +62,14 @@ const ApplicationDetailPage = () => {
       const result = await res.json();
       if (result.success) {
         setAskStatus('success');
-        setTimeout(() => { setAskStatus('idle'); setAskName(''); setAskEmail(''); setAskMessage(''); setAskError(''); }, 3000);
+        setTimeout(() => { setAskStatus('idle'); setAskName(''); setAskEmail(''); setAskMessage(''); }, 3000);
       } else {
-        setAskStatus('idle');
-        setAskError(result.errors ? result.errors.join(' ') : (result.message || 'Failed to send. Please try again.'));
+        setAskStatus('error');
+        setTimeout(() => setAskStatus('idle'), 3000);
       }
     } catch {
-      setAskStatus('idle');
-      setAskError('Network error. Please try again.');
-    }
-  };
-
-  const handleAskWhatsApp = async () => {
-    setAskError('');
-    if (!askName.trim() || !askEmail.trim()) {
-      setAskError('Please enter your name and email before sending via WhatsApp.');
-      return;
-    }
-    try {
-      const res = await fetch('/api/enquiry/whatsapp', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(askPayload()),
-      });
-      const data = await res.json();
-      if (data.success && data.url) {
-        window.open(data.url, '_blank');
-      } else {
-        setAskError(data.errors ? data.errors.join(' ') : (data.message || 'Could not open WhatsApp. Please try again.'));
-      }
-    } catch {
-      setAskError('Could not open WhatsApp. Please check your connection.');
+      setAskStatus('error');
+      setTimeout(() => setAskStatus('idle'), 3000);
     }
   };
 
@@ -256,6 +232,44 @@ const ApplicationDetailPage = () => {
                     ))}
                   </ul>
                 </div>
+
+                {selectedWorkflow.relatedProducts.some(p => p.docs?.length) && (
+                  <div className="adp-modal-section">
+                    <h3>Documents &amp; Resources</h3>
+                    <div className="adp-app-docs-container">
+                      {selectedWorkflow.relatedProducts
+                        .filter(p => p.docs?.length)
+                        .map((product, pIdx) => (
+                          <div key={pIdx} className="adp-app-doc-group">
+                            <h5 className="adp-app-doc-group-title">{product.name}</h5>
+                            <div className="adp-app-doc-links-grid">
+                              {product.docs.map((doc, dIdx) => (
+                                <a
+                                  key={dIdx}
+                                  href={doc.url}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="adp-app-doc-link-card"
+                                  title={doc.text}
+                                >
+                                  <div className="adp-app-doc-icon-wrap" style={{ color: selectedWorkflow.appColor, background: `${selectedWorkflow.appColor}12` }}>
+                                    <FileText size={16} />
+                                  </div>
+                                  <div className="adp-app-doc-info">
+                                    <span className="adp-app-doc-text">{doc.text}</span>
+                                    <span className="adp-app-doc-type">
+                                      {doc.url.toLowerCase().endsWith('.pdf') ? 'PDF Document' : 'External Link'}
+                                    </span>
+                                  </div>
+                                  <ExternalLink size={12} className="adp-app-doc-external-icon" />
+                                </a>
+                              ))}
+                            </div>
+                          </div>
+                        ))}
+                    </div>
+                  </div>
+                )}
               </div>
 
               {/* ── Quote Builder Sidebar ── */}
@@ -369,8 +383,8 @@ const ApplicationDetailPage = () => {
                           />
                         </div>
 
-                        {askError && (
-                          <div className="adp-ask-error"><AlertCircle size={13} /> {askError}</div>
+                        {askStatus === 'error' && (
+                          <div className="adp-ask-error"><AlertCircle size={13} /> Failed to send. Please try again.</div>
                         )}
 
                         <button
@@ -381,16 +395,7 @@ const ApplicationDetailPage = () => {
                         >
                           {askStatus === 'sending'
                             ? <><Loader2 size={13} className="adp-ask-spinner" /> Sending…</>
-                            : <><Send size={13} /> Send via Email</>}
-                        </button>
-
-                        <button
-                          type="button"
-                          className="adp-ask-whatsapp"
-                          onClick={handleAskWhatsApp}
-                          disabled={askStatus === 'sending'}
-                        >
-                          <MessageCircle size={13} /> Send via WhatsApp
+                            : <><Send size={13} /> Send Enquiry</>}
                         </button>
                       </>
                     )}
