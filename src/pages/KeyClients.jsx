@@ -44,7 +44,6 @@ const clientsData = [
   { id: 'aiims-rajkot', name: 'AIIMS Rajkot',                  image: '/clients/aiims-rajkot.png',  subcategory: SUB_CATEGORIES.HEALTHCARE },
   { id: 'nfsu',        name: 'National Forensic Sciences University', image: '/clients/nfsu.png',   subcategory: SUB_CATEGORIES.RESEARCH },
   { id: 'gbu',         name: 'Gujarat Biotechnology University', image: '/clients/gbu.png',          subcategory: SUB_CATEGORIES.RESEARCH },
-  { id: 'govt-emblem', name: 'Government of India',             image: '/clients/govt-emblem.png',  subcategory: SUB_CATEGORIES.RESEARCH },
   { id: 'nddb',        name: 'NDDB',                            image: '/clients/nddb.png',          subcategory: SUB_CATEGORIES.RESEARCH },
   { id: 'gbrc',        name: 'GBRC',                            image: '/clients/gbrc.png',          subcategory: SUB_CATEGORIES.RESEARCH },
   { id: 'reliance',    name: 'Reliance Industries',             image: '/clients/reliance.png',      subcategory: SUB_CATEGORIES.RESEARCH },

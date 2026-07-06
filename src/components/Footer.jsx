@@ -82,7 +82,7 @@ const Footer = () => {
                 className="data-link-hover footer-address-link"
               >
                 <MapPin size={14} className="footer-address-pin" />
-                <span>907, The Empire<br/>Sarkhej - Gandhinagar Hwy<br/>beside Audi Showroom, near Gujarat High court<br/> Vishwas City 1, Sola,<br/>Ahmedabad, Gujarat 380061</span>
+                <span>907, The Empire, Sarkhej - Gandhinagar{' '}Hwy, beside Audi Showroom, near Gujarat High court, Vishwas City 1, Sola, Ahmedabad, Gujarat 380061</span>
               </a>
               <div className="footer-hours">
                 <Clock size={13} className="footer-hours-icon" />

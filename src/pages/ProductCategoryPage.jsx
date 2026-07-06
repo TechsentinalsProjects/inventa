@@ -376,8 +376,6 @@ const ProductCategoryPage = () => {
 
   if (!category) return null;
 
-  const CatIcon = category.icon;
-
   const handleQuantityChange = (product, delta) => {
     setQuantities(prev => ({ ...prev, [product]: Math.max(1, (prev[product] || 1) + delta) }));
   };
@@ -438,7 +436,6 @@ const ProductCategoryPage = () => {
             </Link>
             <span className="pcp-breadcrumb-sep">/</span>
             <span className="pcp-breadcrumb-current" style={{ color: '#fff', opacity: 0.85 }}>
-              <CatIcon size={13} />
               {category.shortTitle}
             </span>
           </div>

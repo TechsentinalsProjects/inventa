@@ -29,7 +29,13 @@
 .pcp-hero-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.55);
+  background: linear-gradient(
+    180deg,
+    rgba(10, 14, 24, 0.35) 0%,
+    rgba(10, 14, 24, 0.25) 35%,
+    rgba(10, 14, 24, 0.72) 80%,
+    rgba(10, 14, 24, 0.88) 100%
+  );
   z-index: 2;
 }
 
@@ -1337,6 +1343,13 @@
 }
 
 @media (max-width: 700px) {
+  .pcp-quote-fab {
+    bottom: 144px;
+    right: 16px;
+    padding: 11px 18px;
+    font-size: 0.82rem;
+  }
+
   .pcp-families-grid { grid-template-columns: 1fr; }
   .pcp-hero { height: 280px; }
   .pcp-hero-inner { padding-bottom: 24px; }

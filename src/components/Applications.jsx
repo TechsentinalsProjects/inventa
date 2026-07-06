@@ -28,7 +28,6 @@ const Applications = () => {
         {/* 3 featured cards */}
         <div className="app-featured-grid">
           {FEATURED.map((item, i) => {
-            const Icon = item.icon;
             return (
               <motion.div
                 key={item.id}
@@ -47,7 +46,6 @@ const Applications = () => {
 
                   <div className="app-feat-top">
                     <span className="app-feat-badge" style={{ background: `${item.color}22`, color: item.color, border: `1px solid ${item.color}44` }}>
-                      <Icon size={13} />
                       {item.shortTitle}
                     </span>
                   </div>

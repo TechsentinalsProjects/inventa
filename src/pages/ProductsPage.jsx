@@ -459,7 +459,6 @@ const ProductsPage = () => {
             <h3 className="pp-sidebar-title">Products</h3>
             <ul ref={sidebarListRef}>
               {productsData.map(cat => {
-                const Icon = cat.icon;
                 const isActive = activeSection === cat.id;
                 return (
                   <li

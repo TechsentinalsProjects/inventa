@@ -10,6 +10,7 @@ const NotFoundPage = () => (
       title="404 — Page Not Found | Inventa Systems"
       description="The page you're looking for doesn't exist. Browse Inventa Systems' product catalogue or contact our team."
       canonical="/404"
+      noindex
     />
 
     <div className="nf-glow nf-glow--top" />

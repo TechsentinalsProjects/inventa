@@ -217,9 +217,7 @@ const ContactPage = () => {
                 Headquarters
               </span>
               <span className="info-value">
-                907, The Empire, Sarkhej - Gandhinagar Hwy <br />
-                beside Audi Showroom, near Gujarat High court <br />
-                Sola, Ahmedabad, Gujarat 380061
+                907, The Empire, Sarkhej - Gandhinagar{' '}Hwy, beside Audi Showroom, near Gujarat High court, Sola, Ahmedabad, Gujarat 380061
               </span>
             </a>
           </div>

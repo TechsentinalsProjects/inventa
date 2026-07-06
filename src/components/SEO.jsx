@@ -5,7 +5,7 @@ const SITE_URL = 'https://www.inventasystems.in';
 const OG_IMAGE = `${SITE_URL}/og-image.png`;
 const FAVICON = `${SITE_URL}/favicon.png`;
 
-function SEO({ title, description, keywords, canonical, ogImage, ogType = 'website', structuredData }) {
+function SEO({ title, description, keywords, canonical, ogImage, ogType = 'website', structuredData, noindex = false }) {
   const fullTitle = title
     ? `${title} | ${SITE}`
     : `${SITE} | Lab Instruments, Reagents & Turnkey Lab Solutions India`;
@@ -17,6 +17,7 @@ function SEO({ title, description, keywords, canonical, ogImage, ogType = 'websi
       <title>{fullTitle}</title>
       <meta name="description" content={description} />
       {keywords && <meta name="keywords" content={keywords} />}
+      {noindex && <meta name="robots" content="noindex, nofollow" />}
       <link rel="canonical" href={url} />
       <link rel="icon" type="image/png" href={FAVICON} />
       <link rel="apple-touch-icon" href={FAVICON} />

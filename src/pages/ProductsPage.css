@@ -1176,6 +1176,15 @@
   .pp-modal-title { font-size: 1.25rem; }
 }
 
+@media (max-width: 600px) {
+  .pp-quote-fab {
+    bottom: 144px;
+    right: 16px;
+    padding: 11px 18px;
+    font-size: 0.82rem;
+  }
+}
+
 /* ── Responsive ── */
 @media (max-width: 1024px) {
   .pp-families-grid { grid-template-columns: repeat(2, 1fr); }

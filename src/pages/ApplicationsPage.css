@@ -784,6 +784,15 @@
   }
 }
 
+@media (max-width: 600px) {
+  .quote-fab {
+    bottom: 144px;
+    right: 16px;
+    padding: 11px 18px;
+    font-size: 0.82rem;
+  }
+}
+
 @media (max-width: 768px) {
   .corp-page-header {
     padding: 100px 5% 30px;

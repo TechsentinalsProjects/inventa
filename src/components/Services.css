@@ -242,7 +242,7 @@
   .services-accordion-wrapper {
     padding: 80px 5% 80px;
   }
-  
+
   .services-header {
     margin-bottom: 40px;
   }
@@ -255,7 +255,7 @@
     flex-direction: column;
     height: 700px; /* More robust height for mobile stacking */
   }
-  
+
   .accordion-panel.active {
     flex: 3.5; /* Give active panel slightly more room on mobile */
   }

@@ -75,8 +75,6 @@ const ApplicationDetailPage = () => {
 
   if (!app) return null;
 
-  const AppIcon = app.icon;
-
   const handleQuantityChange = (product, delta) => {
     setQuantities(prev => ({ ...prev, [product]: Math.max(1, (prev[product] || 1) + delta) }));
   };
@@ -137,7 +135,6 @@ const ApplicationDetailPage = () => {
             </Link>
             <span className="adp-breadcrumb-sep">/</span>
             <span className="adp-breadcrumb-current" style={{ color: '#fff', opacity: 0.85 }}>
-              <AppIcon size={13} />
               {app.shortTitle}
             </span>
           </div>
@@ -155,7 +152,6 @@ const ApplicationDetailPage = () => {
           </div>
           <div className="adp-workflow-grid">
             {app.workflows.map((wf, idx) => {
-              const WfIcon = wf.icon;
               return (
                 <div key={idx} className="adp-workflow-card">
                   <div className="adp-wf-img">
@@ -163,9 +159,6 @@ const ApplicationDetailPage = () => {
                   </div>
                   <div className="adp-wf-body">
                     <div className="adp-wf-title-row">
-                      <span className="adp-wf-icon" style={{ color: app.color, background: `${app.color}15` }}>
-                        <WfIcon size={18} />
-                      </span>
                       <h3>{wf.title}</h3>
                     </div>
                     <p className="adp-wf-desc">{wf.description}</p>
