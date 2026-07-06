@@ -95,7 +95,7 @@ const CareersPage = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          Shape the Future of Life Sciences.
+          Shape the Future of Life Sciences &amp; Diagnostics
         </motion.h1>
         <motion.p
           className="careers-subtitle"
@@ -103,7 +103,7 @@ const CareersPage = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
         >
-          Join Inventa Systems, Gujarat's leading authorized distributor of advanced laboratory equipment and discover a career that fuels innovation.
+          At Inventa Systems, we are more than a life science solutions provider — we are a team driven by innovation, purpose, and growth.
         </motion.p>
       </section>
 
@@ -114,22 +114,44 @@ const CareersPage = () => {
           whileInView="visible"
           viewport={{ once: true, margin: '-50px' }}
           variants={{
-            visible: { transition: { staggerChildren: 0.1 } },
+            visible: { transition: { staggerChildren: 0.08 } },
             hidden: {},
           }}
         >
           <motion.div className="perk-card" variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}>
-            <h3>Continuous Learning</h3>
-            <p>Work directly with state-of-the-art technologies from top global manufacturers like Thermo Fisher Scientific. We invest heavily in your technical training.</p>
+            <h3>Work with Purpose</h3>
+            <p>Contribute to advancing life sciences, molecular biology, and diagnostics that make a real-world impact.</p>
           </motion.div>
           <motion.div className="perk-card" variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}>
-            <h3>Impactful Work</h3>
-            <p>Our solutions directly support molecular biology, forensics, genomics, and diagnostics labs working on life-changing research.</p>
+            <h3>Innovation-Driven Environment</h3>
+            <p>Be part of a company that brings cutting-edge laboratory technologies and global solutions to India.</p>
           </motion.div>
           <motion.div className="perk-card" variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}>
-            <h3>State of the Art Facilities</h3>
-            <p>Operate out of our premium offices and 15,000 sq.ft warehouse in Ahmedabad, designed for efficiency and collaboration.</p>
+            <h3>Learning &amp; Growth</h3>
+            <p>Continuous exposure to leading scientific instruments, technologies, and industry expertise.</p>
           </motion.div>
+          <motion.div className="perk-card" variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}>
+            <h3>Strong Industry Presence</h3>
+            <p>Work alongside leading research institutions, diagnostic labs, pharmaceutical companies, and academic organizations.</p>
+          </motion.div>
+          <motion.div className="perk-card" variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}>
+            <h3>Collaborative Culture</h3>
+            <p>A supportive team that values integrity, teamwork, and excellence.</p>
+          </motion.div>
+          <motion.div className="perk-card" variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}>
+            <h3>Career Development</h3>
+            <p>Opportunities for skill enhancement, training, and long-term professional growth.</p>
+          </motion.div>
+        </motion.div>
+
+        <motion.div
+          className="career-tagline"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <p>Join Inventa Systems and be part of shaping the future of life science and diagnostics in India.</p>
         </motion.div>
 
         <motion.div

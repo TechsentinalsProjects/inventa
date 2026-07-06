@@ -2004,7 +2004,7 @@ models: [
         tagline: 'Advancing genomic innovation through hands-on training',
         description: 'Our state-of-the-art backup laboratory and training centre provides hands-on training on PCR, qPCR, NGS, Sanger sequencing, and sample preparation instruments for researchers, lab technicians, and clinical staff.',
         extendedDescription: 'Decipher Genomics & Research centre serves as both a demonstration laboratory and a training facility. Scientists can receive application-specific training, troubleshoot protocols, evaluate instruments before purchase, and access backup instrumentation during equipment downtime.',
-        image: '/training_centre.png',
+        image: '/applicaion_images/update/Backup Lab & Training Centre.jpg',
         keyFeatures: ['Hands-on instrument training', 'Application support & troubleshooting', 'Instrument demonstration & evaluation', 'Backup lab during equipment downtime', 'Genomics & molecular biology workshops'],
         relatedApplications: ['molecular-diagnostics'],
         models: [

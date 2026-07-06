@@ -26,8 +26,8 @@ const scrollSections = [
   {
     id: 'intro',
     kicker: 'INVENTA SYSTEMS',
-    headline: 'Leading Life Science Distributor.',
-    description: 'Gujarat\'s premier authorized distributor of high-end analytical instruments, centrifuges, and critical laboratory plastic ware since 2017.',
+    headline: 'Leading the Future of Life Science, Pharma and Healthcare Distribution in India',
+    description: 'At Inventa, we are committed to bridging the gap between innovation and accessibility. With a robust nationwide network, we deliver a comprehensive portfolio of pharmaceuticals, biotechnology products, medical devices, diagnostics, and life science solutions to healthcare providers, research institutions, and retail partners.',
     cta: { primary: 'Explore Applications', secondary: 'Learn About Us' },
     productImage: '/turnkey_lab.png'
   },
@@ -35,15 +35,15 @@ const scrollSections = [
     id: 'precision',
     kicker: 'THERMO FISHER SCIENTIFIC',
     headline: 'Authorized Service Provider.',
-    description: 'Certified service partner for PCR, RT-PCR, Centrifuges, Microscopes, Plate Readers, and a wide range of Thermo Fisher Scientific equipment.',
+    description: 'Trusted Certified Service Partner providing expert installation, maintenance, calibration, and technical support for PCR, RT-PCR, centrifuges, microscopes, microplate readers, and a broad portfolio of Thermo Fisher Scientific laboratory equipment.',
     cta: { primary: 'Our Services', secondary: 'Request Service' },
     productImage: '/centrifuge_lab.png'
   },
   {
     id: 'integration',
     kicker: 'INNOVATION & QUALITY',
-    headline: 'Delivering Life-Changing Solutions.',
-    description: 'From molecular biology to forensic science, we supply consumables, reusables, and cutting-edge instruments to diagnostics labs, pharma companies, and research academia across India.',
+    headline: 'Making a Meaningful Impact',
+    description: 'Driving progress in life sciences and molecular biology, we deliver innovative solutions and advanced laboratory technologies that enable breakthrough research and contribute to improving lives worldwide.',
     cta: { primary: 'Explore Catalog', secondary: 'Get a Quote' },
     productImage: '/life_sciences.png'
   },
@@ -389,7 +389,7 @@ const Hero = () => {
             </div>
             <div className="stat-divider" />
             <div className="stat">
-              <span className="stat-number">7+</span>
+              <span className="stat-number">50+</span>
               <span className="stat-label">Product Lines</span>
             </div>
           </div>

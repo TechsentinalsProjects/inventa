@@ -39,7 +39,7 @@ router.post('/', uploadLimiter, upload.single('resume'), validateCareer, async (
   } catch (err) {
     console.error('[Careers] Email failed:', err.message);
     logMessage({ type: 'career', channel: 'email', senderName: name, senderEmail: email, status: 'failed', errorDetail: err.message });
-    return res.status(500).json({ success: false, message: `Failed to submit application. Please email your resume to ${process.env.BUSINESS_EMAIL || 'our careers team'}` });
+    return res.status(500).json({ success: false, message: 'Failed to submit application. Please email your resume to inquiry@inventasystems.in' });
   }
 });
 

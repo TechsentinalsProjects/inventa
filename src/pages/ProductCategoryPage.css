@@ -23,24 +23,27 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  z-index: 1;
 }
 
 .pcp-hero-overlay {
   position: absolute;
   inset: 0;
   background: rgba(0, 0, 0, 0.55);
+  z-index: 2;
 }
 
 .pcp-hero-color-wash {
   position: absolute;
   inset: 0;
-  opacity: 0.28;
-  mix-blend-mode: multiply;
+  opacity: 0.08;
+  mix-blend-mode: color;
+  z-index: 3;
 }
 
 .pcp-hero-inner {
   position: relative;
-  z-index: 2;
+  z-index: 4;
   max-width: 1240px;
   margin: 0 auto;
   padding: 0 5%;

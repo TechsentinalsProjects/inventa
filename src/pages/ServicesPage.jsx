@@ -287,7 +287,7 @@ const ServicesPage = () => {
 
           {/* 4. Wide Feature Card: Maintenance */}
           <motion.div
-            className="bento-card span-2"
+            className="bento-card span-3"
             variants={{
               hidden: { opacity: 0, y: 30 },
               visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" }}
@@ -309,18 +309,38 @@ const ServicesPage = () => {
             </div>
           </motion.div>
 
-          {/* 5. Text Only: Book Engineer CTA */}
+          {/* 5. GeM Support — full-width banner (never orphaned at any breakpoint) */}
           <motion.div
-            className="bento-card text-only"
+            className="bento-card span-3 gem-banner"
             variants={{
               hidden: { opacity: 0, y: 30 },
               visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" }}
             }}
           >
-            <div className="bento-content">
-              <h2 className="bento-title" style={{ fontSize: '1.8rem', marginBottom: '16px' }}>Need Support?</h2>
-              <p className="bento-desc" style={{ color: '#aaa', marginBottom: '24px' }}>Our technical team is ready to assist you.</p>
-              <button className="bento-cta" onClick={() => setShowBooking(true)}>
+            <div className="gem-banner-logo">
+              <img src="/brands/gem-logo.png" alt="GeM Support" />
+            </div>
+            <div className="bento-content gem-banner-content">
+              <span className="bento-num">04. Procurement</span>
+              <h2 className="bento-title">GeM Support</h2>
+              <p className="bento-desc" style={{ maxWidth: '100%' }}>
+                Comprehensive support for the Government e-Marketplace (GeM), helping buyers and sellers navigate the procurement process with ease. From registration and listing to bidding, order management, and compliance, our experts ensure a smooth and hassle-free experience.
+              </p>
+            </div>
+          </motion.div>
+
+          {/* 6. Text Only: Book Engineer CTA */}
+          <motion.div
+            className="bento-card text-only span-3"
+            variants={{
+              hidden: { opacity: 0, y: 30 },
+              visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" }}
+            }}
+          >
+            <div className="bento-content" style={{ alignItems: 'center', textAlign: 'center' }}>
+              <h2 className="bento-title" style={{ fontSize: '2rem', marginBottom: '16px' }}>Need Support?</h2>
+              <p className="bento-desc" style={{ color: '#aaa', marginBottom: '24px', maxWidth: '600px' }}>Our technical team is ready to assist you.</p>
+              <button className="bento-cta" style={{ alignSelf: 'center' }} onClick={() => setShowBooking(true)}>
                 Book Engineer <ArrowRight size={18} />
               </button>
             </div>

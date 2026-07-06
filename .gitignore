@@ -27,9 +27,3 @@ npm-debug.log*
 
 # ─── Netlify ──────────────────────────────────────────────────────────────────
 .netlify
-
-# ─── Large / Unnecessary Files ────────────────────────────────────────────────
-*.zip
-desktop.ini
-
-# Animation frames are tracked in git (needed in production)

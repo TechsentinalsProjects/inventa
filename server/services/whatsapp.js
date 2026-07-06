@@ -5,7 +5,7 @@
 
 /** Strip +, -, spaces from env value — wa.me only accepts digits. */
 function getPhone() {
-  return (process.env.WHATSAPP_PHONE || '').replace(/[\s+\-]/g, '');
+  return (process.env.WHATSAPP_PHONE || '919313840714').replace(/[\s+\-]/g, '');
 }
 
 /** Strip HTML-like characters and cap length to prevent injection. */

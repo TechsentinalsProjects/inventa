@@ -1,0 +1,70 @@
+Add Content items — complete, accurate list
+Section	Exact PDF instruction	Link(s)
+Cell Biology → Flow Cytometry	"Add Content"	thermofisher.com/order/catalog/product/A28997
+Forensic Science → Toxicology	"Add Content" + "Add Brochure"	thermofisher.com/order/catalog/product/IQLAAEGABSFAPYMBHL + documents.thermofisher.com/.../BR-64309-HRAM-MSMS-Spectral-Libraries.pdf
+Lab Equipment → Bio Safety Cabinet	"Attach Brochure and also add content from it" (content comes from the brochure itself)	documents.thermofisher.com/.../D20817.pdf
+Lab Equipment → Water Purification	"Add Content" + "Attach Brochure"	thermofisher.com/search/browse/category/in/en/90177050 + documents.thermofisher.com/.../BRWPOVERVIEW-FR-0413.pdf
+Lab Equipment → Cold Storage	"Add Content and Brochure from the attach links"	thermofisher.com/order/catalog/product/TDE50040LARK + documents.thermofisher.com/.../-40 EU_TDE_1019 Web.pdf (+ separate AABB flyer brochure line)
+Lab Equipment → Data Logger	"Add Content and brochure from attach link"	thermofisher.com/order/catalog/product/ST100-102
+Item 17 → Turnkey content replacement	"Replace ... content using the given link"	thermofisher.com/.../lab-construction-information.html
+(Molecular Diagnostics' Real-Time PCR bullet content was given verbatim in the PDF itself, not as a link — already in the code.)
+
+Full in-depth image list — by PDF section, with exact code location and what's needed
+All locations are in src/data/applicationsData.js, one object per category.
+
+#9 Molecular Diagnostics (banner molecular_diagnostics_new.png — flagged AI-generated, garbled screen/labels)
+
+Workflow	Current file	Needed
+Nucleic Acid Extraction	img-337b-full.jpg (generic, reused 3×)	KingFisher instrument photo from kingfisher-instruments-experience-brochure.pdf
+Real-Time PCR & qPCR Reagents	img-c2-full.jpg (reused)	QuantStudio 5 photo from quantstudio-real-time-pcr-system-family-brochure.pdf
+Sanger Sequencing	img-561c.jpg (reused)	SeqStudio Flex photo from its HID brochure
+Next-Generation Sequencing	img-81ea-full.jpg (reused)	Genexus Integrated Sequencer photo from ion-torrent-genexus-system-brochure.pdf
+#10 Cell Biology (banner cell_biology_new.png — likely AI-generated, same batch)
+
+Workflow	Current file	Needed
+Cell Culture & Expansion	img-12f8.jpg (reused 5×!)	Photo from the mammalian cell-culture reagents page
+Flow Cytometry	img-6192.jpg (reused)	Attune NxT Flow Cytometer photo from its brochure
+Cell Imaging & Analysis	img-ac1d.jpg (reused)	Imaging system photo from imaging-systems-brochure.pdf
+#11 Cell and Gene Therapy (banner cell_gene_therapy_new.png — confirmed AI-generated, fake "GMP Vatto Lot"/"CRIP Vecto Lot" labels visible)
+
+Workflow	Current file	Needed
+Gene Editing (CRISPR)	img-72aa.jpg (reused)	Photo/diagram from local genome-editing-resource-guide-brochurepdf.pdf
+Cell Therapy Manufacturing	img-81ea-480.jpg (reused)	Photo from local cell-therapy-brochure.pdf, ideally the workflow screenshot the PDF says was emailed
+#12 Analytical Science (banner fine)
+
+Workflow	Current file	Needed
+Mass Spectrometry	tripleblock.jpg (reused)	Orbitrap Exploris 480 photo
+ICP-MS	HPLC_UHPLCSystems.png — literally the HPLC product's photo, wrong instrument entirely	iCAP RQ/MTX ICP-MS photo
+Battery Technology Solutions	img-337b-full.jpg (reused)	Photo from local public/brochures/battery/ PDFs
+Extreva	img-12f8.jpg (reused)	Photo from local br-000940-ic-sample-preparation-extreva-ase...pdf
+Chromatography (HPLC/UHPLC)	img-c2-620.jpg (reused)	Vanquish Neo UHPLC photo
+#13 Forensic Science (banner fine)
+
+Workflow	Current file	Needed
+Human Identification (HID)	img-6192.jpg (dup of Flow Cytometry)	SeqStudio Flex HID photo
+Toxicology	img-ac1d.jpg (dup of Cell Imaging)	Toxicology LC-MS/MS system photo
+#14 Agri, Veterinary & Animal Health
+
+Workflow	Current file	Needed
+Animal Health Diagnostics	agri_veterinary.png — duplicate of its own category banner	Dedicated animal-health photo. Note: public/applications/animal_health.png still exists, orphaned from before the merge — worth checking if that's usable here instead
+#15 Point of Care Solutions
+
+Workflow	Current file	Needed
+Truenat & Molbio POC Solutions	point_of_care.png — duplicate of its own category banner	Photo of Truenat device/iBreastExam/ProRad Atlas/OptraScan from the 5 molbiodiagnostics.com links
+#16 Lab Equipment
+
+Workflow	Current file	Needed
+Centrifugation	img-ac1d.jpg (reused)	Centrifuge photo from GP-Pro brochure
+Cold Chain & Storage	img-175a.jpg (reused)	TDE Series ULT Freezer photo
+Sterilization & Safety	img-f774.jpg (reused)	Autoclave/fume hood photo
+Biological Safety Cabinets	img-f774.jpg — exact same file as Sterilization & Safety above, both workflows show identical image	Biosafety cabinet photo from D20817.pdf
+Water Purification Systems	img-c2-full.jpg (reused)	Barnstead system photo
+Wireless Data Loggers	img-12f8.jpg (reused)	Smart-Vue logger photo
+#17 Turnkey Lab Design & Furniture — all 3 workflows use reused generic files (img-175a.jpg, img-f774.jpg, img-72aa.jpg); no direct brochure photo given in the PDF, source needs to come from the linked Thermo Fisher lab-construction page or the client's own facility photos.
+
+#18 Lab Consumables
+
+Workflow	Current file	Needed
+Pipette Tips & Tubes	img-81ea-480.jpg (dup of Cell Therapy Manufacturing)	Finnpipette tip photo
+Microplates & Dishes	img-337b-480.jpg	Microplate photo from MicroAmp compatibility brochure
+Not covered by the 26 PDF items but same generic-image problem (lower priority): Chemicals & Reagents, Liquid Handling & Lab Automation, LIMS & Software, Turnkey Service Management — all reuse the same small pool of img-XXXX.jpg files.

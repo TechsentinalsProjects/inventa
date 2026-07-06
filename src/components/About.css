@@ -63,8 +63,8 @@
   will-change: transform;
 }
 
-.about-kicker {
-  font-size: 1.25rem;
+.about-canvas-wrapper .about-kicker {
+  font-size: calc(var(--size-step-2) * 1.1);
   font-weight: 700;
   letter-spacing: 0.22em;
   text-transform: uppercase;
@@ -84,7 +84,7 @@
 }
 
 .about-title {
-  font-size: var(--size-step-2);
+  font-size: clamp(1.4rem, 2.0vw, 1.8rem);
   font-weight: 800;
   letter-spacing: -0.04em;
   color: #1a1a1a;
@@ -108,7 +108,7 @@
 }
 
 .about-paragraphs p {
-  font-size: var(--size-step-0);
+  font-size: calc(var(--size-step-0) * 1.15);
   line-height: 1.6;
   color: #555;
   margin: 0;
@@ -265,5 +265,5 @@
     padding: 24px;
     border-radius: 24px;
   }
-  .about-title { font-size: 2rem; }
+  .about-title { font-size: 1.6rem; }
 }

@@ -68,6 +68,15 @@ const navData = [
         icon: Settings,
         image: '/lab_solutions.png',
         href: '/services'
+      },
+      {
+        id: 's4',
+        title: 'GeM Support',
+        description: 'Government e-Marketplace (GeM) registration, listing, and procurement assistance.',
+        icon: CheckCircle2,
+        image: '/brands/gem-logo.png',
+        isLogo: true,
+        href: '/services'
       }
     ]
   },
@@ -237,7 +246,7 @@ const Navigation = () => {
                           key={hoveredSubItem?.id}
                           src={hoveredSubItem?.image}
                           alt={hoveredSubItem?.title}
-                          className="mega-photo"
+                          className={`mega-photo ${hoveredSubItem?.isLogo ? 'is-brand-logo' : ''}`}
                           initial={{ opacity: 0, scale: 1.05 }}
                           animate={{ opacity: 1, scale: 1 }}
                           exit={{ opacity: 0, scale: 0.95 }}

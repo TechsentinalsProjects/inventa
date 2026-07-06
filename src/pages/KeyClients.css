@@ -371,92 +371,6 @@
 }
 
 /* ────────────────────────────────────────────
-   CTA SECTION
-──────────────────────────────────────────── */
-.kc-cta-section {
-  position: relative;
-  z-index: 1;
-  padding: 0 5% 10vh;
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.kc-cta-card {
-  position: relative;
-  background: #111;
-  border-radius: 32px;
-  padding: 64px;
-  text-align: center;
-  overflow: hidden;
-  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.18);
-}
-
-.kc-cta-glow {
-  position: absolute;
-  top: -80px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 500px;
-  height: 300px;
-  background: radial-gradient(ellipse at center, rgba(93, 174, 123, 0.3) 0%, transparent 70%);
-  pointer-events: none;
-}
-
-.kc-cta-eyebrow {
-  font-family: 'Geist Mono', monospace;
-  font-size: 0.78rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.16em;
-  color: var(--accent);
-  margin-bottom: 16px;
-}
-
-.kc-cta-title {
-  font-size: clamp(1.8rem, 4vw, 3rem);
-  font-weight: 800;
-  color: #fff;
-  letter-spacing: -0.04em;
-  margin-bottom: 16px;
-}
-
-.kc-cta-desc {
-  font-size: 1.05rem;
-  color: rgba(255, 255, 255, 0.55);
-  line-height: 1.6;
-  max-width: 520px;
-  margin: 0 auto 36px;
-}
-
-.kc-cta-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  background: linear-gradient(135deg, #5DAE7B, #4A9A68);
-  color: #fff;
-  padding: 15px 34px;
-  border-radius: 100px;
-  font-weight: 700;
-  font-size: 0.95rem;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  box-shadow: 0 6px 20px rgba(93, 174, 123, 0.4);
-}
-
-.kc-cta-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 30px rgba(93, 174, 123, 0.55);
-}
-
-.kc-cta-btn svg {
-  transition: transform 0.3s ease;
-}
-
-.kc-cta-btn:hover svg {
-  transform: translateX(4px);
-}
-
-/* ────────────────────────────────────────────
    RESPONSIVE
 ──────────────────────────────────────────── */
 @media (max-width: 640px) {
@@ -483,11 +397,6 @@
   .kc-tab {
     padding: 8px 14px;
     font-size: 0.82rem;
-  }
-
-  .kc-cta-card {
-    padding: 40px 24px;
-    border-radius: 20px;
   }
 
   .kc-grid {

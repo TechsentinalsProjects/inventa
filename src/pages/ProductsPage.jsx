@@ -101,7 +101,7 @@ const ProductFamilyModal = ({ family, category, quantities, addedItem, onClose, 
           <div className="pcp-modal-left">
             <div className="pcp-drawer-img-wrap">
               <img src={activeModel?.image || family.image} alt={activeModel?.name || family.name} className="pcp-drawer-img" />
-              <div className="pcp-drawer-img-overlay" style={{ background: `linear-gradient(to top, ${category.color}99 0%, transparent 60%)` }} />
+              <div className="pcp-drawer-img-overlay" />
             </div>
 
             <div className="pcp-modal-section">
@@ -499,7 +499,10 @@ const ProductsPage = () => {
 
                 {/* Category Header */}
                 <div className="pp-cat-header">
-                  <div className="pp-cat-header-overlay" style={{ background: `linear-gradient(135deg, ${cat.color} 0%, ${cat.color}99 60%, #0d111e 100%)` }} />
+                  <div
+                    className="pp-cat-header-overlay"
+                    style={{ background: `linear-gradient(135deg, ${cat.color}dd 0%, rgba(0,0,0,0.72) 100%)` }}
+                  />
                   <div className="pp-cat-header-inner">
                     <div>
                       <h2>{cat.title}</h2>

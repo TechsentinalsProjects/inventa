@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import './OurBrands.css';
 
 const brandItems = [
-  { id: 'dgr',              label: 'DGR',                 image: '/brands/dgr.jpg' },
+  { id: 'thermo-fisher',    label: 'Thermo Fisher',       image: '/brands/thermo-fisher.png' },
   { id: 'molbio',           label: 'MolBio',              image: '/brands/molbio.png' },
   { id: 'pierce',           label: 'Pierce Biotechnology', image: '/brands/pierce.png' },
   { id: 'peprotech',        label: 'Peprotech',           image: '/brands/peprotech.png' },
@@ -20,7 +20,7 @@ const brandItems = [
   { id: 'nunc',             label: 'Nunc',                image: '/brands/nunc.png' },
   { id: 'applied-bio',      label: 'Applied Biosystems',  image: '/brands/applied-biosystems.png' },
   { id: 'nalgene',          label: 'Nalgene',             image: '/brands/nalgene.png' },
-  { id: 'oxford-nanopore',  label: 'Oxford Nanopore',     image: '/brands/oxford-nanopore.png' },
+  { id: 'dgr',              label: 'Decipher Genomics',   image: '/brands/dgr.jpg' },
 ];
 
 const OurBrands = () => {

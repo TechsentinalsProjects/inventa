@@ -18,6 +18,14 @@ function esc(v) {
   return String(v || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
 }
 
+// Formats a digits-only phone (e.g. "919313840714") as "+91 93138 40714" for display.
+// Falls back to a plain "+<digits>" for numbers that don't match the 91 + 10-digit pattern.
+function formatPhoneDisplay(digits) {
+  const clean = String(digits || '').replace(/\D/g, '');
+  const match = clean.match(/^91(\d{5})(\d{5})$/);
+  return match ? `+91 ${match[1]} ${match[2]}` : `+${clean}`;
+}
+
 function formatIST() {
   const now = new Date();
   const date = now.toLocaleDateString('en-GB', { timeZone: 'Asia/Kolkata', day: 'numeric', month: 'long', year: 'numeric' });
@@ -26,7 +34,7 @@ function formatIST() {
 }
 
 // ── Brand palette (matches site: #5DAE7B green, #0A0A0A dark) ─────────────────
-const LOGO     = process.env.BUSINESS_LOGO_URL || 'https://www.inventasystems.in/image.png';
+const LOGO     = 'https://www.inventasystems.in/image.png';
 const GREEN    = '#5DAE7B';
 const GREEN_D  = '#4A9A68';
 const GREEN_DD = '#3D8A5A';
@@ -78,6 +86,9 @@ function emailHeader(label, title) {
 
 function emailFooter() {
   const yr = new Date().getFullYear();
+  const contactEmail = process.env.BUSINESS_EMAIL;
+  const contactPhoneDigits = process.env.WHATSAPP_PHONE;
+  const contactPhoneDisplay = formatPhoneDisplay(contactPhoneDigits);
   return `
   <table width="100%" cellpadding="0" cellspacing="0" style="background:${DARK2};">
     <tr>
@@ -86,10 +97,11 @@ function emailFooter() {
              style="display:block;margin:0 auto 14px;height:30px;width:auto;opacity:.7;"
              onerror="this.style.display='none'">
         <p style="margin:0 0 3px;font-size:13px;font-weight:600;color:#CCCCCC;font-family:Arial,sans-serif;">Inventa Systems</p>
-        <p style="margin:0 0 3px;font-size:11px;color:#555;font-family:Arial,sans-serif;">${esc(process.env.BUSINESS_ADDRESS || '510 & 507 Anand Mangal-3, Near Hira Baug Crossing, Ambawadi, Ahmedabad 380006')}</p>
+        <p style="margin:0 0 3px;font-size:11px;color:#555;font-family:Arial,sans-serif;">907, The Empire, Sarkhej - Gandhinagar Hwy, beside Audi Showroom, near Gujarat High court, Vishwas City 1, Sola, Ahmedabad, Gujarat 380061</p>
         <p style="margin:0 0 0;font-size:11px;font-family:Arial,sans-serif;">
-          <a href="mailto:${esc(process.env.BUSINESS_EMAIL || '')}" style="color:${GREEN};text-decoration:none;">${esc(process.env.BUSINESS_EMAIL || '')}</a>
-          ${process.env.BUSINESS_PHONE ? `<span style="color:#333;">&nbsp;·&nbsp;</span><a href="tel:${esc(process.env.BUSINESS_PHONE.replace(/\s/g,''))}" style="color:${GREEN};text-decoration:none;">${esc(process.env.BUSINESS_PHONE)}</a>` : ''}
+          <a href="mailto:${contactEmail}" style="color:${GREEN};text-decoration:none;">${contactEmail}</a>
+          <span style="color:#333;">&nbsp;·&nbsp;</span>
+          <a href="tel:+${contactPhoneDigits}" style="color:${GREEN};text-decoration:none;">${contactPhoneDisplay}</a>
         </p>
       </td>
     </tr>
@@ -207,8 +219,7 @@ function productCard(item, idx) {
             <table width="100%" cellpadding="0" cellspacing="0">
               <tr>
                 <td style="font-size:12px;color:${TEXT_3};padding-bottom:${features.length?'10px':'0'};">
-                  <span style="color:${GREEN};font-weight:700;">${esc(item.categoryTitle||'General Product')}</span>
-                  ${item.familyName ? `<span style="color:${TEXT_3};">&nbsp;›&nbsp;${esc(item.familyName)}</span>` : ''}
+                  ${esc(item.categoryTitle||'General Product')}
                   ${item.tier ? `&nbsp;&nbsp;${tierBadge(item.tier)}` : ''}
                   ${item.tagline ? `<br><em style="font-size:11px;color:${TEXT_3};font-style:italic;">${esc(item.tagline)}</em>` : ''}
                 </td>

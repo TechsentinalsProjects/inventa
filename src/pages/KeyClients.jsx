@@ -53,7 +53,7 @@ const clientsData = [
 ];
 
 const brandsData = [
-  { id: 'dgr',              name: 'DGR',                 image: '/brands/dgr.jpg',                 subcategory: SUB_CATEGORIES.BRAND },
+  { id: 'thermo-fisher',    name: 'Thermo Fisher',       image: '/brands/thermo-fisher.png',       subcategory: SUB_CATEGORIES.BRAND },
   { id: 'molbio',           name: 'MolBio',              image: '/brands/molbio.png',              subcategory: SUB_CATEGORIES.BRAND },
   { id: 'pierce',           name: 'Pierce Biotechnology', image: '/brands/pierce.png',              subcategory: SUB_CATEGORIES.BRAND },
   { id: 'peprotech',        name: 'Peprotech',           image: '/brands/peprotech.png',           subcategory: SUB_CATEGORIES.BRAND },
@@ -69,7 +69,7 @@ const brandsData = [
   { id: 'nunc',             name: 'Nunc',                image: '/brands/nunc.png',                subcategory: SUB_CATEGORIES.BRAND },
   { id: 'applied-bio',      name: 'Applied Biosystems',  image: '/brands/applied-biosystems.png',  subcategory: SUB_CATEGORIES.BRAND },
   { id: 'nalgene',          name: 'Nalgene',             image: '/brands/nalgene.png',             subcategory: SUB_CATEGORIES.BRAND },
-  { id: 'oxford-nanopore',  name: 'Oxford Nanopore',     image: '/brands/oxford-nanopore.png',     subcategory: SUB_CATEGORIES.BRAND },
+  { id: 'dgr',              name: 'Decipher Genomics',   image: '/brands/dgr.jpg',                 subcategory: SUB_CATEGORIES.BRAND },
 ];
 
 const ClientCard = ({ item }) => {
@@ -174,7 +174,7 @@ const KeyClients = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.3 }}
         >
-          From premier research universities and diagnostic labs to pharmaceutical giants and world-class laboratory brands — Inventa Systems is a trusted partner across India.
+          Trusted by leading research institutions, diagnostic laboratories, pharmaceutical companies, and world-renowned life science brands, Inventa Systems delivers innovative technologies and dependable laboratory solutions across India.
         </motion.p>
 
         {/* Stat strip */}
@@ -185,17 +185,17 @@ const KeyClients = () => {
           transition={{ duration: 0.8, delay: 0.5 }}
         >
           <div className="kc-stat">
-            <span className="kc-stat-number">20+</span>
+            <span className="kc-stat-number">200+</span>
             <span className="kc-stat-label">Key Clients</span>
           </div>
           <div className="kc-stat-divider" />
           <div className="kc-stat">
-            <span className="kc-stat-number">17+</span>
+            <span className="kc-stat-number">20+</span>
             <span className="kc-stat-label">Our Brands</span>
           </div>
           <div className="kc-stat-divider" />
           <div className="kc-stat">
-            <span className="kc-stat-number">7+</span>
+            <span className="kc-stat-number">9+</span>
             <span className="kc-stat-label">Years of Trust</span>
           </div>
         </motion.div>
@@ -240,30 +240,6 @@ const KeyClients = () => {
             </AnimatePresence>
           </motion.div>
         </LayoutGroup>
-      </section>
-
-      {/* Bottom CTA */}
-      <section className="kc-cta-section">
-        <motion.div
-          className="kc-cta-card"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-        >
-          <div className="kc-cta-glow" />
-          <p className="kc-cta-eyebrow">Join Our Network</p>
-          <h2 className="kc-cta-title">Ready to Partner With Inventa?</h2>
-          <p className="kc-cta-desc">
-            We supply premium laboratory instruments, consumables, and analytical equipment to leading institutions across India.
-          </p>
-          <a href="/contact" className="kc-cta-btn">
-            Get in Touch
-            <svg width="18" height="18" viewBox="0 0 16 16" fill="none">
-              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </a>
-        </motion.div>
       </section>
     </main>
   );

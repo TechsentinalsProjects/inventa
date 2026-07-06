@@ -22,10 +22,10 @@ function bizOpen() {
 }
 
 // ── Contact constants ─────────────────────────────────────────────────────────
-const PHONE      = '+91 87340 13927';
-const PHONE_HREF = 'tel:+918734013927';
-const WA_HREF    = `https://wa.me/918734013927?text=${encodeURIComponent('Hi Inventa Systems! I came across your website and would like to know more about your lab instruments and solutions.')}`;
-const EMAIL      = 'dharapanchal@inventasystems.in';
+const PHONE      = '+91 93138 40714';
+const PHONE_HREF = 'tel:+919313840714';
+const WA_HREF    = `https://wa.me/919313840714?text=${encodeURIComponent('Hi Inventa Systems! I came across your website and would like to know more about your lab instruments and solutions.')}`;
+const EMAIL      = 'inquiry@inventasystems.in';
 
 const A_CALL     = { label: `Call ${PHONE}`, href: PHONE_HREF, style: 'call' };
 const A_WA       = { label: 'WhatsApp Us', href: WA_HREF, style: 'whatsapp' };
@@ -504,7 +504,7 @@ const KB = [
     id: 'contact',
     tags: ['contact', 'support', 'phone', 'email', 'reach', 'helpline', 'talk', 'speak', 'connect', 'get in touch', 'number', 'call us'],
     response: {
-      text: `Here's how to reach our team:\n\n📞 Phone: ${PHONE}\n💬 WhatsApp: +91 81288 39609\n📧 Email: ${EMAIL}\n\n🕐 Business Hours: Mon–Sat, 11:00 AM – 7:00 PM IST\n\nI can also arrange a callback — just click below and our team will call you during business hours.`,
+      text: `Here's how to reach our team:\n\n📞 Phone: ${PHONE}\n💬 WhatsApp: ${PHONE}\n📧 Email: ${EMAIL}\n\n🕐 Business Hours: Mon–Sat, 11:00 AM – 7:00 PM IST\n\nI can also arrange a callback — just click below and our team will call you during business hours.`,
       followUps: ['Where are you located?', 'Do you have WhatsApp support?'],
       actions: [A_CALLBACK, A_CALL, A_WA],
     }
@@ -515,7 +515,7 @@ const KB = [
     id: 'whatsapp',
     tags: ['whatsapp', 'wa', 'instant message', 'chat with you'],
     response: {
-      text: `Yes, we're on WhatsApp!\n\n💬 +91 81288 39609\n\nSend us product enquiries, quote requests, service bookings, or any query. Outside business hours, we'll reply the next working day.\n\nOr if you'd prefer a phone conversation, I can arrange a callback.`,
+      text: `Yes, we're on WhatsApp!\n\n💬 ${PHONE}\n\nSend us product enquiries, quote requests, service bookings, or any query. Outside business hours, we'll reply the next working day.\n\nOr if you'd prefer a phone conversation, I can arrange a callback.`,
       followUps: ['How do I call you?', 'What is your email?'],
       actions: [A_WA, A_CALLBACK],
     }
@@ -526,7 +526,7 @@ const KB = [
     id: 'location',
     tags: ['location', 'address', 'where', 'headquarters', 'office', 'city', 'based', 'visit'],
     response: {
-      text: `Inventa Systems is headquartered in Ahmedabad, India.\n\n📍 510 & 507 Anand Mangal-3, Near Hira Baug Crossing, Ambawadi, Ahmedabad 380006\n\nWe serve customers pan-India with local sales and service support. Our Decipher Genomics & Research Centre is also open for demos, hands-on training, and instrument evaluations.\n\nWant to visit? I can arrange a tour.`,
+      text: `Inventa Systems is headquartered in Ahmedabad, India.\n\n📍 907, The Empire, Sarkhej - Gandhinagar Hwy, beside Audi Showroom, near Gujarat High court, Vishwas City 1, Sola, Ahmedabad, Gujarat 380061\n\nWe serve customers pan-India with local sales and service support. Our Decipher Genomics & Research Centre is also open for demos, hands-on training, and instrument evaluations.\n\nWant to visit? I can arrange a tour.`,
       followUps: ['How do I contact you?', 'Do you deliver across India?', 'Book a training session'],
       actions: [A_CALLBACK, A_CONTACT],
     }
@@ -548,9 +548,9 @@ const KB = [
     id: 'career',
     tags: ['career', 'job', 'jobs', 'hiring', 'vacancy', 'opening', 'recruit', 'work with', 'apply', 'resume', 'cv', 'internship', 'fresher'],
     response: {
-      text: `Interested in joining Inventa Systems?\n\nWe hire for:\n• Sales & Business Development\n• Service & Application Engineering\n• Product Specialists (PCR, NGS, Chromatography)\n• Operations & Logistics\n• Marketing & Digital\n\nTo apply:\n• Visit our Careers page for current openings\n• Email resume to hr@inventasystems.in\n• Or WhatsApp your profile directly\n\nFreshers and experienced candidates both welcome!`,
+      text: `Interested in joining Inventa Systems?\n\nWe hire for:\n• Sales & Business Development\n• Service & Application Engineering\n• Product Specialists (PCR, NGS, Chromatography)\n• Operations & Logistics\n• Marketing & Digital\n\nTo apply:\n• Visit our Careers page for current openings\n• Email resume to ${EMAIL}\n• Or WhatsApp your profile directly\n\nFreshers and experienced candidates both welcome!`,
       followUps: ['What roles are currently open?', 'Where is your office?'],
-      actions: [A_CAREERS, { label: 'Email HR', href: 'mailto:hr@inventasystems.in', style: 'outline' }, A_WA],
+      actions: [A_CAREERS, { label: 'Email HR', href: `mailto:${EMAIL}`, style: 'outline' }, A_WA],
     }
   },
 

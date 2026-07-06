@@ -100,7 +100,7 @@ const FamilyModal = ({ family, category, quantities, addedItem, onClose, onAddTo
           <div className="pcp-modal-left">
             <div className="pcp-drawer-img-wrap">
               <img src={activeModel?.image || family.image} alt={activeModel?.name || family.name} className="pcp-drawer-img" />
-              <div className="pcp-drawer-img-overlay" style={{ background: `linear-gradient(to top, ${category.color}99 0%, transparent 60%)` }} />
+              <div className="pcp-drawer-img-overlay" />
             </div>
 
             <div className="pcp-modal-section">
@@ -155,7 +155,15 @@ const FamilyModal = ({ family, category, quantities, addedItem, onClose, onAddTo
                     <div key={gIdx} className="pcp-doc-group">
                       <h5 className="pcp-doc-group-title">{group.header}</h5>
                       <div className="pcp-doc-links-grid">
-                        {group.links.map((link, lIdx) => (
+                        {[...group.links].sort((a, b) => {
+                          const aLower = a.text.toLowerCase();
+                          const bLower = b.text.toLowerCase();
+                          const aIsGuide = aLower.includes('user guide') || aLower.includes('manual');
+                          const bIsGuide = bLower.includes('user guide') || bLower.includes('manual');
+                          if (aIsGuide && !bIsGuide) return 1;
+                          if (!aIsGuide && bIsGuide) return -1;
+                          return 0;
+                        }).map((link, lIdx) => (
                           <a
                             key={lIdx}
                             href={link.url}
@@ -460,7 +468,7 @@ const ProductCategoryPage = () => {
               >
                 <div className="pcp-fc-img-wrap">
                   <img src={family.image} alt={family.name} className="pcp-fc-img" />
-                  <div className="pcp-fc-gradient" style={{ background: `linear-gradient(to top, ${category.color}bb 0%, transparent 55%)` }} />
+                  <div className="pcp-fc-gradient" />
                   <div className="pcp-fc-badge" style={{ background: `${category.color}`, color: '#fff' }}>
                     {family.models.length} model{family.models.length !== 1 ? 's' : ''}
                   </div>

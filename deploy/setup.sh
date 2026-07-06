@@ -79,8 +79,8 @@ SMTP_FROM=$(ask   "SMTP From"       "Inventa Systems <inventasite@inventasystems
 
 echo ""
 echo -e "  ${BOLD}Business settings:${NC}"
-BUSINESS_EMAIL=$(ask "Business email (receives all form submissions)" "inquiry@inventasystems.in")
-WA_PHONE=$(ask       "WhatsApp number (digits only)"                  "918734013927")
+BUSINESS_EMAIL=$(ask "Business email (receives all form submissions)" "dharapanchal@inventasystems.in")
+WA_PHONE=$(ask       "WhatsApp number (digits only)"                  "919313840714")
 
 echo ""
 echo -e "  ${BOLD}━━━━ Summary ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"

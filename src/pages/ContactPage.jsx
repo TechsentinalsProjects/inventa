@@ -75,7 +75,7 @@ const ContactPage = () => {
     <main className="contact-page">
       <SEO
         title="Contact Us — Lab Instruments Enquiry"
-        description="Contact Inventa Systems for lab instrument enquiries, quotes, and service requests. Visit us at Ambawadi, Ahmedabad or call +91 87340 13927. Email: inquiry@inventasystems.in."
+        description="Contact Inventa Systems for lab instrument enquiries, quotes, and service requests. Visit us at Sola, Ahmedabad or call +91 93138 40714. Email: inquiry@inventasystems.in."
         keywords="contact Inventa Systems, lab instrument enquiry India, laboratory supplier Ahmedabad, scientific equipment quote India"
         canonical="/contact"
         structuredData={{
@@ -86,14 +86,14 @@ const ContactPage = () => {
           mainEntity: {
             '@type': 'Organization',
             name: 'Inventa Systems',
-            telephone: '+91-87340-13927',
+            telephone: '+91-93138-40714',
             email: 'inquiry@inventasystems.in',
             address: {
               '@type': 'PostalAddress',
-              streetAddress: '510 & 507 Anand Mangal-3, Near Hira Baug Crossing, Ambawadi',
+              streetAddress: '907, The Empire, Sarkhej - Gandhinagar Hwy, beside Audi Showroom, near Gujarat High court, Vishwas City 1, Sola',
               addressLocality: 'Ahmedabad',
               addressRegion: 'Gujarat',
-              postalCode: '380006',
+              postalCode: '380061',
               addressCountry: 'IN',
             },
           },
@@ -205,18 +205,21 @@ const ContactPage = () => {
           transition={{ duration: 0.8, delay: 0.3 }}
         >
           <div className="info-card">
-            <span className="info-label">Headquarters</span>
             <a
-              href="https://maps.google.com/?q=510+Anand+Mangal+3,+Near+Hira+Baug+Crossing,+Ambawadi,+Ahmedabad+380006"
+              href="https://maps.google.com/?q=907,+The+Empire,+Sarkhej+-+Gandhinagar+Hwy,+beside+Audi+Showroom,+near+Gujarat+High+court,+Vishwas+City+1,+Sola,+Ahmedabad,+Gujarat+380061"
               target="_blank"
               rel="noopener noreferrer"
-              className="info-value contact-address-link"
+              className="info-card dark"
+              style={{ flex: 1.4 }}
             >
-              <MapPin size={18} className="contact-address-pin" />
-              <span>
-                510 &amp; 507 Anand Mangal-3 <br/>
-                Near Hira Baug Crossing, Ambawadi <br/>
-                Ahmedabad 380006, Gujarat
+              <span className="info-label" style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                <MapPin size={14} />
+                Headquarters
+              </span>
+              <span className="info-value">
+                907, The Empire, Sarkhej - Gandhinagar Hwy <br />
+                beside Audi Showroom, near Gujarat High court <br />
+                Sola, Ahmedabad, Gujarat 380061
               </span>
             </a>
           </div>
@@ -232,8 +235,9 @@ const ContactPage = () => {
             <div className="info-card light" style={{ flex: 1 }}>
               <span className="info-label">Call Us</span>
               <p className="info-value">
+                <a href="tel:+919313840714">+91 93138 40714</a><br/>
                 <a href="tel:+918734013927">+91 87340 13927</a><br/>
-                <a href="tel:+917698186968">+91 7698 186968</a>
+                <a href="tel:+917698186968">+91 76981 86968</a>
               </p>
             </div>
           </div>
@@ -242,7 +246,7 @@ const ContactPage = () => {
             <span className="info-label">WhatsApp</span>
             <p className="info-value">
               <a
-                href="https://wa.me/918734013927"
+                href={`https://wa.me/919313840714?text=${encodeURIComponent('Hi Inventa Systems! I came across your website and would like to know more about your lab instruments and solutions.')}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{ color: '#25D366', fontWeight: 600 }}

@@ -405,6 +405,13 @@
   will-change: transform, opacity;
 }
 
+.mega-photo.is-brand-logo {
+  background-color: #ffffff;
+  padding: 40px;
+  box-sizing: border-box;
+  object-fit: contain;
+}
+
 .image-overlay {
   position: absolute;
   inset: 0;

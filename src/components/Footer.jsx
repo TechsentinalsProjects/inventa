@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { ArrowUpRight, Mail, Phone, MapPin, FlaskConical, Clock } from 'lucide-react';
+import { ArrowUpRight, Phone, MapPin, FlaskConical, Clock } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import './Footer.css';
 
@@ -63,9 +63,6 @@ const Footer = () => {
           transition={{ duration: 0.8 }}
         >
           <img src="/image.png" alt="Inventa Systems" className="footer-logo-bright" />
-          <p className="data-brand-desc">
-            Gujarat's premier authorized distributor of high-end analytical instruments, centrifuges, and critical laboratory plastic ware.
-          </p>
         </motion.div>
 
         <div className="data-links-wrapper">
@@ -79,13 +76,13 @@ const Footer = () => {
             <h4 className="data-col-title">Headquarters</h4>
             <div className="data-col-content">
               <a
-                href="https://maps.google.com/?q=510+Anand+Mangal+3,+Near+Hira+Baug+Crossing,+Ambawadi,+Ahmedabad+380006"
+                href="https://maps.google.com/?q=907,+The+Empire,+Sarkhej+-+Gandhinagar+Hwy,+beside+Audi+Showroom,+near+Gujarat+High+court,+Vishwas+City+1,+Sola,+Ahmedabad,+Gujarat+380061"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="data-link-hover footer-address-link"
               >
                 <MapPin size={14} className="footer-address-pin" />
-                <span>510, Anand Mangal-3<br/>Near Hira Baug Crossing<br/>Ambawadi, Ahmedabad 380006</span>
+                <span>907, The Empire<br/>Sarkhej - Gandhinagar Hwy<br/>beside Audi Showroom, near Gujarat High court<br/> Vishwas City 1, Sola,<br/>Ahmedabad, Gujarat 380061</span>
               </a>
               <div className="footer-hours">
                 <Clock size={13} className="footer-hours-icon" />
@@ -103,7 +100,7 @@ const Footer = () => {
           >
             <h4 className="data-col-title">Contact Directory</h4>
             <div className="data-col-content">
-              <a href="mailto:dharapanchal@inventasystems.in" className="data-link-hover">dharapanchal@inventasystems.in</a>
+              <a href="mailto:inquiry@inventasystems.in" className="data-link-hover">inquiry@inventasystems.in</a>
               <a href="tel:+919313840714" className="data-link-hover">+91 93138 40714</a>
               <a href="tel:+917698186968" className="data-link-hover">+91 76981 86968</a>
               <a href="tel:+918734013927" className="data-link-hover">+91 87340 13927</a>

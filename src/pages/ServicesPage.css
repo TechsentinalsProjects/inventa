@@ -55,6 +55,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-auto-rows: 400px;
+  grid-auto-flow: dense;
   gap: 24px;
 }
 
@@ -204,6 +205,34 @@
 .bento-card.text-only .bento-cta:hover {
   background: #fff;
   color: #000;
+}
+
+/* GeM Support — full-width horizontal banner */
+.bento-card.gem-banner {
+  flex-direction: row;
+  align-items: stretch;
+  background: #111;
+}
+
+.gem-banner-logo {
+  flex: 0 0 280px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+}
+
+.gem-banner-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.gem-banner-content {
+  flex: 1;
+  justify-content: center;
+  position: relative;
 }
 
 /* ── Book Engineer Modal ── */
@@ -447,6 +476,9 @@
   .bento-desc {
     max-width: 100%;
   }
+  .span-3 {
+    grid-column: span 2;
+  }
 }
 
 @media (max-width: 768px) {
@@ -466,5 +498,13 @@
   }
   .bento-title {
     font-size: clamp(1.6rem, 8vw, 2rem);
+  }
+  .bento-card.gem-banner {
+    flex-direction: column;
+  }
+  .gem-banner-logo {
+    flex: 0 0 140px;
+    width: 100%;
+    padding: 20px;
   }
 }

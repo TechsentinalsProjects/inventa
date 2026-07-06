@@ -233,6 +233,37 @@ const ApplicationDetailPage = () => {
                   </ul>
                 </div>
 
+                {selectedWorkflow.title === 'Cell Therapy Manufacturing' && (
+                  <div className="adp-modal-section">
+                    <h3>Our Workflow</h3>
+                    <div className="adp-our-workflow">
+                      {[
+                        { step: 1, title: 'Collection and tracking', items: ['Apheresis', 'Supply and cold chain logistics', 'Documentation', 'Chain of custody'] },
+                        { step: 2, title: 'Cell isolation, activation, and processing', items: ['Closed modular cell processing systems', 'Magnetic bead-based cell isolation and activation', 'Single-use platforms', 'High cell purity and viability', 'Flexible, high-speed, and scalable solutions'] },
+                        { step: 3, title: 'Cell engineering and genome editing', items: ['Genome editing technologies—CRISPR and TALEN tools', 'Closed modular electroporation system', 'Lentiviral production system', 'Lipid nanoparticles', 'Sequence confirmation, verification, and QC'] },
+                        { step: 4, title: 'Cell expansion', items: ['Custom and catalog media', 'PeproGMP cytokines and recombinant proteins', 'Premium fetal bovine serum (FBS) that meets USP/EP guidelines', 'Serum-free and xeno-free reagents', 'Closed modular cell processing systems', 'Single-use technologies (SUTs), incubators, bioreactors, centrifuges, and biosafety cabinets'] },
+                        { step: 5, title: 'Formulation, fill, finish, and cryopreservation', items: ['Automated formulation and filling', 'Broader compatibility to various outputs and volume ranges', 'Precise and consistent volumes', 'Cryopreservation platforms'] },
+                        { step: 6, title: 'Lot release, characterization, and purity analysis', items: ['Identity, purity, and potency assays', 'Contamination and impurity solutions', 'Microbial safety', 'Genomic, proteomic, and cellular analytical tools'] },
+                        { step: 7, title: 'Supply and logistics', items: ['Supply and cold chain logistics', 'Clinical trial support', 'Global distribution'] },
+                      ].map((stage) => (
+                        <div key={stage.step} className="adp-wf-step">
+                          <div className="adp-wf-step-header">
+                            <span className="adp-wf-step-num" style={{ background: selectedWorkflow.appColor }}>{stage.step}</span>
+                            <span className="adp-wf-step-title">{stage.title}</span>
+                          </div>
+                          <ul className="adp-wf-items">
+                            {stage.items.map((item, idx) => (
+                              <li key={idx}>
+                                <span className="adp-wf-dot" style={{ background: selectedWorkflow.appColor }} />
+                                {item}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
                 {selectedWorkflow.relatedProducts.some(p => p.docs?.length) && (
                   <div className="adp-modal-section">
                     <h3>Documents &amp; Resources</h3>
@@ -243,7 +274,15 @@ const ApplicationDetailPage = () => {
                           <div key={pIdx} className="adp-app-doc-group">
                             <h5 className="adp-app-doc-group-title">{product.name}</h5>
                             <div className="adp-app-doc-links-grid">
-                              {product.docs.map((doc, dIdx) => (
+                              {[...product.docs].sort((a, b) => {
+                                const aLower = a.text.toLowerCase();
+                                const bLower = b.text.toLowerCase();
+                                const aIsGuide = aLower.includes('user guide') || aLower.includes('manual');
+                                const bIsGuide = bLower.includes('user guide') || bLower.includes('manual');
+                                if (aIsGuide && !bIsGuide) return 1;
+                                if (!aIsGuide && bIsGuide) return -1;
+                                return 0;
+                              }).map((doc, dIdx) => (
                                 <a
                                   key={dIdx}
                                   href={doc.url}

@@ -142,7 +142,6 @@ const ApplicationsPage = () => {
             <h3 className="corp-sidebar-title">Applications</h3>
             <ul ref={sidebarListRef}>
               {applicationsData.map(app => {
-                const Icon = app.icon;
                 const isActive = activeSection === app.id;
                 return (
                   <li
@@ -158,7 +157,7 @@ const ApplicationsPage = () => {
                       onClick={(e) => scrollToSection(e, app.id)}
                       style={isActive ? { '--active-color': app.color } : {}}
                     >
-                      <span className="corp-sidebar-icon"><Icon size={16} /></span>
+                      
                       <span className="corp-sidebar-text">{app.title}</span>
                     </a>
                   </li>
@@ -176,7 +175,6 @@ const ApplicationsPage = () => {
         {/* Scrollable Content */}
         <div className="corp-content">
           {applicationsData.map(app => {
-            const AppIcon = app.icon;
             return (
             <section key={app.id} id={app.id} className="corp-section">
               <div
@@ -191,15 +189,12 @@ const ApplicationsPage = () => {
               </div>
               <div className="corp-workflow-grid">
                 {app.workflows.map((wf, idx) => {
-                  const WfIcon = wf.icon;
                   return (
                     <div key={idx} className="corp-workflow-card">
                       <div className="corp-wf-img"><img src={wf.image} alt={wf.title} /></div>
                       <div className="corp-wf-content">
                         <div className="corp-wf-title-row">
-                          <span className="corp-wf-icon" style={{ color: app.color, background: `${app.color}15` }}>
-                            <WfIcon size={18} />
-                          </span>
+                          
                           <h3>{wf.title}</h3>
                         </div>
                         <p className="corp-wf-desc">{wf.description}</p>
@@ -251,6 +246,38 @@ const ApplicationsPage = () => {
                     ))}
                   </ul>
                 </div>
+
+                {selectedWorkflow.title === 'Cell Therapy Manufacturing' && (
+                  <div className="corp-modal-section">
+                    <h3>Our Workflow</h3>
+                    <div className="adp-our-workflow">
+                      {[
+                        { step: 1, title: 'Collection and tracking', items: ['Apheresis', 'Supply and cold chain logistics', 'Documentation', 'Chain of custody'] },
+                        { step: 2, title: 'Cell isolation, activation, and processing', items: ['Closed modular cell processing systems', 'Magnetic bead-based cell isolation and activation', 'Single-use platforms', 'High cell purity and viability', 'Flexible, high-speed, and scalable solutions'] },
+                        { step: 3, title: 'Cell engineering and genome editing', items: ['Genome editing technologies—CRISPR and TALEN tools', 'Closed modular electroporation system', 'Lentiviral production system', 'Lipid nanoparticles', 'Sequence confirmation, verification, and QC'] },
+                        { step: 4, title: 'Cell expansion', items: ['Custom and catalog media', 'PeproGMP cytokines and recombinant proteins', 'Premium fetal bovine serum (FBS) that meets USP/EP guidelines', 'Serum-free and xeno-free reagents', 'Closed modular cell processing systems', 'Single-use technologies (SUTs), incubators, bioreactors, centrifuges, and biosafety cabinets'] },
+                        { step: 5, title: 'Formulation, fill, finish, and cryopreservation', items: ['Automated formulation and filling', 'Broader compatibility to various outputs and volume ranges', 'Precise and consistent volumes', 'Cryopreservation platforms'] },
+                        { step: 6, title: 'Lot release, characterization, and purity analysis', items: ['Identity, purity, and potency assays', 'Contamination and impurity solutions', 'Microbial safety', 'Genomic, proteomic, and cellular analytical tools'] },
+                        { step: 7, title: 'Supply and logistics', items: ['Supply and cold chain logistics', 'Clinical trial support', 'Global distribution'] },
+                      ].map((stage) => (
+                        <div key={stage.step} className="adp-wf-step">
+                          <div className="adp-wf-step-header">
+                            <span className="adp-wf-step-num" style={{ background: selectedWorkflow.appColor }}>{stage.step}</span>
+                            <span className="adp-wf-step-title">{stage.title}</span>
+                          </div>
+                          <ul className="adp-wf-items">
+                            {stage.items.map((item, idx) => (
+                              <li key={idx}>
+                                <span className="adp-wf-dot" style={{ background: selectedWorkflow.appColor }} />
+                                {item}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
 
                 {selectedWorkflow.relatedProducts.some(p => p.docs?.length) && (
                   <div className="corp-modal-section">

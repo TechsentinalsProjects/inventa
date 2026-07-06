@@ -82,7 +82,7 @@ const AboutPage = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.1 }}
         >
-          To become a leading <span className="about-gradient-word">Life Science Distributor</span> in India.
+          To empower scientific discovery <span className="about-gradient-word">&amp; transform diagnostics</span>.
         </motion.h1>
         
         <motion.p 
@@ -91,7 +91,7 @@ const AboutPage = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.3 }}
         >
-          Providing a wide range of revolutionary scientific products for every researcher and diagnostic customer through trust-based relationships.
+          By providing innovative technologies, advanced laboratory instruments, and high-quality solutions that accelerate research, improve patient care, and drive excellence in healthcare and biotechnology.
         </motion.p>
       </section>
 
@@ -121,10 +121,10 @@ const AboutPage = () => {
         >
           <h2>Who We Are</h2>
           <p>
-            With more than four years of experience in the science and plastic labware industry, Inventa Systems is a leader in Gujarat for supplying laboratory plastic ware used in molecular biology, cell culture, genomics, proteomics, and immunology.
+            With over 9 years of expertise in life sciences, we are one of India's leading suppliers of laboratory instruments, advanced technologies, consumables, chemicals, and plasticware.
           </p>
           <p>
-            Operating a state-of-the-art 15,000 sq. ft. company-owned warehouse in Ahmedabad, we ensure secure and precise storage for scientific products, including highly sensitive and perishable items.
+            We empower research and diagnostics in molecular biology, cell culture, genomics, proteomics, and immunology with innovative, high-quality solutions from trusted global brands.
           </p>
         </motion.div>
 
@@ -137,10 +137,46 @@ const AboutPage = () => {
         >
           <h2>Delivering Solutions</h2>
           <p>
-            Our dedication as a product distributor makes us unique – it is our commitment to the best quality that makes laboratories across the country depend on us for consumables, reusables, and instruments. 
+            Today, Inventa Systems is a trusted leader in life science solutions, delivering world-class products and technologies through partnerships with leading manufacturers in the USA and Europe.
           </p>
-          <p>
-            Today, Inventa Systems is a leading authorized distributor of liquid handling systems, centrifuge ware, cryo labware, and advanced instruments, representing major manufacturers from the USA and Europe. The name Inventa is synonymous with innovation, togetherness, quality, and service.
+          <ul className="delivering-solutions-list" style={{ paddingLeft: '20px', marginBottom: '24px', listStyleType: 'disc' }}>
+            <li style={{ marginBottom: '10px', color: 'var(--text-secondary)' }}>Authorized Distributor of globally recognized life science brands.</li>
+            <li style={{ marginBottom: '10px', color: 'var(--text-secondary)' }}>Comprehensive Portfolio of laboratory instruments, liquid handling systems, centrifuge ware, cryogenic labware, consumables, and advanced technologies.</li>
+            <li style={{ marginBottom: '10px', color: 'var(--text-secondary)' }}>Serving research, biotechnology, pharmaceutical, healthcare, and academic laboratories across India.</li>
+            <li style={{ marginBottom: '10px', color: 'var(--text-secondary)' }}>Committed to innovation, quality, reliability, and exceptional customer support.</li>
+          </ul>
+          <div className="about-tagline" style={{ marginTop: '30px', fontWeight: 600, borderLeft: '3px solid var(--accent)', paddingLeft: '15px', color: 'var(--text-primary)' }}>
+            Inventa Systems stands for Innovation • Quality • Togetherness • Service.
+          </div>
+        </motion.div>
+      </section>
+
+      {/* New Partner With Us Section */}
+      <section className="about-partner-section" style={{ padding: '0 5% 15vh 5%', maxWidth: '1200px', margin: '0 auto' }}>
+        <motion.div
+          className="about-partner-card"
+          style={{
+            background: 'rgba(255, 255, 255, 0.03)',
+            backdropFilter: 'blur(10px)',
+            borderRadius: '24px',
+            padding: '40px',
+            border: '1px solid rgba(255, 255, 255, 0.05)',
+          }}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          <h2 style={{ fontSize: '2rem', fontWeight: 700, marginBottom: '20px', color: 'var(--text-primary)' }}>Partner with us for complete laboratory solutions.</h2>
+          <ul style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '15px', paddingLeft: '20px', marginBottom: '30px', listStyleType: 'square', color: 'var(--text-secondary)' }}>
+            <li>Customized Quotations</li>
+            <li>Live Product Demonstrations</li>
+            <li>Expert Technical Consultation</li>
+            <li>Application &amp; Product Support</li>
+            <li>End-to-End Laboratory Solutions</li>
+          </ul>
+          <p style={{ fontSize: '1.1rem', color: 'var(--text-secondary)', lineHeight: '1.6' }}>
+            Contact us today to discover the right technologies, instruments, and consumables for your laboratory.
           </p>
         </motion.div>
       </section>
