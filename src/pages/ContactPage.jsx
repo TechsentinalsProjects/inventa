@@ -90,10 +90,10 @@ const ContactPage = () => {
             email: 'inquiry@inventasystems.in',
             address: {
               '@type': 'PostalAddress',
-              streetAddress: '907, The Empire, Sarkhej - Gandhinagar Hwy, beside Audi Showroom, near Gujarat High court, Vishwas City 1, Sola',
+              streetAddress: 'Plot no. 69, Sunshine Industrial Hub, - 1, Near Navapura Railway Crossing, Near Changodar, Navapura',
               addressLocality: 'Ahmedabad',
               addressRegion: 'Gujarat',
-              postalCode: '380061',
+              postalCode: '382213',
               addressCountry: 'IN',
             },
           },
@@ -206,7 +206,7 @@ const ContactPage = () => {
         >
           <div className="info-card">
             <a
-              href="https://maps.google.com/?q=907,+The+Empire,+Sarkhej+-+Gandhinagar+Hwy,+beside+Audi+Showroom,+near+Gujarat+High+court,+Vishwas+City+1,+Sola,+Ahmedabad,+Gujarat+380061"
+              href="https://maps.google.com/?q=Plot+no.+69,+Sunshine+Industrial+Hub,+-+1,+Near+Navapura+Railway+Crossing,+Near+Changodar,+Navapura,+Ahmedabad,+-+382213"
               target="_blank"
               rel="noopener noreferrer"
               className="info-card dark"
@@ -217,7 +217,7 @@ const ContactPage = () => {
                 Headquarters
               </span>
               <span className="info-value">
-                907, The Empire, Sarkhej - Gandhinagar{' '}Hwy, beside Audi Showroom, near Gujarat High court, Sola, Ahmedabad, Gujarat 380061
+                Plot no. 69, Sunshine Industrial Hub, - 1, Near Navapura Railway Crossing, Near Changodar, Navapura, Ahmedabad, Gujarat 382213
               </span>
             </a>
           </div>

@@ -526,7 +526,7 @@ const KB = [
     id: 'location',
     tags: ['location', 'address', 'where', 'headquarters', 'office', 'city', 'based', 'visit'],
     response: {
-      text: `Inventa Systems is headquartered in Ahmedabad, India.\n\n📍 907, The Empire, Sarkhej - Gandhinagar Hwy, beside Audi Showroom, near Gujarat High court, Vishwas City 1, Sola, Ahmedabad, Gujarat 380061\n\nWe serve customers pan-India with local sales and service support. Our Decipher Genomics & Research Centre is also open for demos, hands-on training, and instrument evaluations.\n\nWant to visit? I can arrange a tour.`,
+      text: `Inventa Systems is headquartered in Ahmedabad, India.\n\n📍 Plot no. 69, Sunshine Industrial Hub, - 1, Near Navapura Railway Crossing, Near Changodar, Navapura, Ahmedabad, Gujarat 382213\n\nWe serve customers pan-India with local sales and service support. Our Decipher Genomics & Research Centre is also open for demos, hands-on training, and instrument evaluations.\n\nWant to visit? I can arrange a tour.`,
       followUps: ['How do I contact you?', 'Do you deliver across India?', 'Book a training session'],
       actions: [A_CALLBACK, A_CONTACT],
     }

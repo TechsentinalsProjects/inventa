@@ -76,13 +76,13 @@ const Footer = () => {
             <h4 className="data-col-title">Headquarters</h4>
             <div className="data-col-content">
               <a
-                href="https://maps.google.com/?q=907,+The+Empire,+Sarkhej+-+Gandhinagar+Hwy,+beside+Audi+Showroom,+near+Gujarat+High+court,+Vishwas+City+1,+Sola,+Ahmedabad,+Gujarat+380061"
+                href="https://maps.google.com/?q=Plot+no.+69,+Sunshine+Industrial+Hub,+-+1,+Near+Navapura+Railway+Crossing,+Near+Changodar,+Navapura,+Ahmedabad,+-+382213"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="data-link-hover footer-address-link"
               >
                 <MapPin size={14} className="footer-address-pin" />
-                <span>907, The Empire, Sarkhej - Gandhinagar{' '}Hwy, beside Audi Showroom, near Gujarat High court, Vishwas City 1, Sola, Ahmedabad, Gujarat 380061</span>
+                <span>Plot no. 69, Sunshine Industrial Hub, - 1, Near Navapura Railway Crossing, Near Changodar, Navapura, Ahmedabad, Gujarat 382213</span>
               </a>
               <div className="footer-hours">
                 <Clock size={13} className="footer-hours-icon" />

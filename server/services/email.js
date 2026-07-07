@@ -97,7 +97,7 @@ function emailFooter() {
              style="display:block;margin:0 auto 14px;height:30px;width:auto;opacity:.7;"
              onerror="this.style.display='none'">
         <p style="margin:0 0 3px;font-size:13px;font-weight:600;color:#CCCCCC;font-family:Arial,sans-serif;">Inventa Systems</p>
-        <p style="margin:0 0 3px;font-size:11px;color:#555;font-family:Arial,sans-serif;">907, The Empire, Sarkhej - Gandhinagar Hwy, beside Audi Showroom, near Gujarat High court, Vishwas City 1, Sola, Ahmedabad, Gujarat 380061</p>
+        <p style="margin:0 0 3px;font-size:11px;color:#555;font-family:Arial,sans-serif;">Plot no. 69, Sunshine Industrial Hub, - 1, Near Navapura Railway Crossing, Near Changodar, Navapura, Ahmedabad, Gujarat 382213</p>
         <p style="margin:0 0 0;font-size:11px;font-family:Arial,sans-serif;">
           <a href="mailto:${contactEmail}" style="color:${GREEN};text-decoration:none;">${contactEmail}</a>
           <span style="color:#333;">&nbsp;·&nbsp;</span>
